@@ -7,17 +7,14 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class ShiftHigh extends Command {
+public class AutoPlacement1 extends Command {
 
-    public ShiftHigh() {
-      	requires(Robot.driveTrain);
+    public AutoPlacement1() {
+        requires(Robot.driveTrain);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	
-  
-    	
     }
 
     // Called repeatedly when this Command is scheduled to run
