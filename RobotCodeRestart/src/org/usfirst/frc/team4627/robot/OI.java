@@ -22,8 +22,8 @@ public class OI {
 	
 		public OI () {
 			
-			//a.whenPressed(new ShiftHigh());
-			//b.whenPressed(new ShiftLow());
+			a.whenPressed(new ShiftHigh());
+			b.whenPressed(new ShiftLow());
 				
 		}
 	
