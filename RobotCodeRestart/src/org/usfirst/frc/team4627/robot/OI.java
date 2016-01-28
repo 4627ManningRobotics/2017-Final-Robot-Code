@@ -1,6 +1,9 @@
 package org.usfirst.frc.team4627.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
 import org.usfirst.frc.team4627.robot.commands.ExampleCommand;
 
 /**
@@ -9,6 +12,25 @@ import org.usfirst.frc.team4627.robot.commands.ExampleCommand;
  */
 public class OI {
     
+	// Declaring Joysticks
+	Joystick driver = new Joystick(RobotMap.DRIVER_JOYSTICK);
+	Joystick operator = new Joystick(RobotMap.OPERATOR_JOYSTICK);
+	
+	//Declaring Buttons
+	Button a = new JoystickButton(driver, RobotMap.BUTTON_A);
+	Button b = new JoystickButton(driver, RobotMap.BUTTON_B);
+	
+		public OI () {
+			
+			a.whenPressed(new ShiftHigh());
+			b.whenPressed(new ShiftLow());
+			
+			
+			
+			
+			
+		}
+	
 	
 	
 	
