@@ -7,9 +7,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class AutoRamparts extends Command {
+public class AutoTeeterTotters extends Command {
 
-    public AutoRamparts() {
+    public AutoTeeterTotters() {
     	requires(Robot.driveTrain);
     }
 
