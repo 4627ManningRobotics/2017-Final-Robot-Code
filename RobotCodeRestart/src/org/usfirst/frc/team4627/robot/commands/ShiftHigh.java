@@ -1,5 +1,7 @@
 package org.usfirst.frc.team4627.robot.commands;
 
+import org.usfirst.frc.team4627.robot.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -14,6 +16,9 @@ public class ShiftHigh extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	
+    	requires(Robot.driveTrain);
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
