@@ -23,7 +23,7 @@ public class TankDrive extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     
-    double leftJoystick = Robot.oi.driverAxisValue(RobotMap.LEFT_JOYSTICK_Y_AXIS);
+    double leftJoystick = Robot.oi.driverAxisValue(RobotMap.LEFT_JOYSTICK_Y_AXIS)*(-1);
     double rightJoystick = Robot.oi.driverAxisValue(RobotMap.RIGHT_JOYSTICK_Y_AXIS);
     
     Robot.driveTrain.setLeftMotors(leftJoystick);

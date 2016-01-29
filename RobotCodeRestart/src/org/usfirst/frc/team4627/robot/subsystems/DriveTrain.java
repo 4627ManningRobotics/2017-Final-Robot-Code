@@ -3,6 +3,7 @@ package org.usfirst.frc.team4627.robot.subsystems;
 import org.usfirst.frc.team4627.robot.RobotMap;
 import org.usfirst.frc.team4627.robot.commands.ArcadeDrive;
 import org.usfirst.frc.team4627.robot.commands.GTADrive;
+import org.usfirst.frc.team4627.robot.commands.TankDrive;
 
 import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.Solenoid;
@@ -44,7 +45,7 @@ public class DriveTrain extends Subsystem {
     	
     public void initDefaultCommand() {
         
-    setDefaultCommand(new ArcadeDrive());
+    setDefaultCommand(new TankDrive());
     	
     	
     }

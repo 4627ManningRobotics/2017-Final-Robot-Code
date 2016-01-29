@@ -33,7 +33,7 @@ public class RobotMap {
 	public static final int LEFT_TRIGGER = 2;
 	public static final int LEFT_JOYSTICK_X_AXIS = 0;
 	public static final int LEFT_JOYSTICK_Y_AXIS = 1;
-	public static final int RIGHT_JOYSTICK_Y_AXIS = 0;
+	public static final int RIGHT_JOYSTICK_Y_AXIS = 5;
 	
 	//GTA Drive Settings
 		//Robot Speed Scaling
