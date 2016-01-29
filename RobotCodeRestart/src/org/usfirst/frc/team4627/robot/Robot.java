@@ -10,6 +10,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team4627.robot.commands.AutoLowBar;
 import org.usfirst.frc.team4627.robot.commands.AutoMoat;
+import org.usfirst.frc.team4627.robot.commands.AutoPlacement1;
+import org.usfirst.frc.team4627.robot.commands.AutoPlacement2;
+import org.usfirst.frc.team4627.robot.commands.AutoPlacement3;
+import org.usfirst.frc.team4627.robot.commands.AutoPlacement4;
+import org.usfirst.frc.team4627.robot.commands.AutoPlacement5;
 import org.usfirst.frc.team4627.robot.commands.AutoPortacolis;
 import org.usfirst.frc.team4627.robot.commands.AutoRamparts;
 import org.usfirst.frc.team4627.robot.commands.AutoRockWall;
@@ -63,8 +68,19 @@ public class Robot extends IterativeRobot {
 		//Makes all sendable choosers visable on the smart dashboard
 		SmartDashboard.putData("Autonomous Defense Selector", autonomousDefense);
 		
-        // instantiate the command used for the autonomous period
-       // autonomousCommand = new ExampleCommand();
+		//Sets autonomousPlacement to a SendableChooser instance variable
+		autonomousPlacement = new SendableChooser();
+		
+		//Adding options to the SenableChooser instance variable, autonoumousDefense
+		autonomousPlacement.addDefault("Placement 1", new AutoPlacement1());
+		autonomousPlacement.addObject("Placement 2", new AutoPlacement2());
+		autonomousPlacement.addObject("Placement 3", new AutoPlacement3());
+		autonomousPlacement.addObject("Placement 4", new AutoPlacement4());
+		autonomousPlacement.addObject("Placement 5", new AutoPlacement5());
+		
+		//Makes all sendable choosers visable on the smart dashboard
+		SmartDashboard.putData("Autonomous Placement Selector", autonomousPlacement);
+		
     }
 	
 	public void disabledPeriodic() {
