@@ -44,6 +44,10 @@ public class Robot extends IterativeRobot {
 	//Autonomous dashboard commands
     SendableChooser autonomousDefense;
     SendableChooser autonomousPlacement;
+    
+    //Creates autonomous order variable which starts true and is made false at the end of each defense command and activates
+    //the autonomousPlacement command
+    public static boolean autoOrder;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -88,12 +92,21 @@ public class Robot extends IterativeRobot {
 	}
 
     public void autonomousInit() {
+    	//Makes autoOrder variable = true
+    	autoOrder = true;
     	
     	//Makes autonomousDefenseStart command variable equal to the selected command on the autonomousDefense selectable chooser
     	autonomousDefenseStart = (Command) autonomousDefense.getSelected();
     	
+    	//Makes autonomousPlacementStart command variable equal to the selected command on the autonomousPlacement selectable chooser
+    	autonomousPlacementStart = (Command) autonomousPlacement.getSelected();
+    	
     	//Runs autonomousDefenseStart command
     	autonomousDefenseStart.start();
+    	
+    	//Runs autonomousPlacementStart command
+    	autonomousPlacementStart.start();
+    
     }
 
     /**
