@@ -27,6 +27,18 @@ public class OI {
 			b.whenPressed(new ShiftLow());
 				
 		}
+		
+	public double driverAxisValue (int axis) {
+		
+		return driver.getRawAxis(axis);
+		
+	}
+	
+	public double operatorAxisValue (int axis) {
+		
+		return operator.getRawAxis(axis);
+		
+	}
 	
 	
 	
