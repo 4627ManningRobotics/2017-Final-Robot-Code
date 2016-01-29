@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team4627.robot.commands.AutoLowBar;
 import org.usfirst.frc.team4627.robot.commands.AutoMoat;
@@ -32,8 +33,8 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 
 	//Autonomous run commands
-	Command autonomousDefenseInt;
-	Command autonomousPlacementInt;
+	Command autonomousDefenseStart;
+	Command autonomousPlacementStart;
 	
 	//Autonomous dashboard commands
     SendableChooser autonomousDefense;
@@ -59,6 +60,9 @@ public class Robot extends IterativeRobot {
 		autonomousDefense.addObject("Rough Terrain",new AutoRoughTerrain());
 		autonomousDefense.addObject("Teeter Totters",new AutoTeeterTotters());
 		
+		//Makes all sendable choosers visable on the smart dashboard
+		SmartDashboard.putData("Autonomous Defense Selector", autonomousDefense);
+		
         // instantiate the command used for the autonomous period
        // autonomousCommand = new ExampleCommand();
     }
@@ -68,8 +72,12 @@ public class Robot extends IterativeRobot {
 	}
 
     public void autonomousInit() {
-        // schedule the autonomous command (example)
-       // if (autonomousCommand != null) autonomousCommand.start();
+    	
+    	//Makes autonomousDefenseStart command variable equal to the selected command on the autonomousDefense selectable chooser
+    	autonomousDefenseStart = (Command) autonomousDefense.getSelected();
+    	
+    	//Runs autonomousDefenseStart command
+    	autonomousDefenseStart.start();
     }
 
     /**
