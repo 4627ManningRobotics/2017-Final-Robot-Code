@@ -1,5 +1,4 @@
 package org.usfirst.frc.team4627.robot.commands;
-
 import org.usfirst.frc.team4627.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -15,6 +14,10 @@ public class ShiftLow extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+   
+    //Shifts to low gear
+    Robot.driveTrain.shiftGear(false);
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
