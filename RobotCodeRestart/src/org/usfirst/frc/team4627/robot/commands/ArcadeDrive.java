@@ -25,11 +25,11 @@ public class ArcadeDrive extends Command {
     protected void execute() {
     
     	// Setting Axis values
-  	double yAxis = Robot.oi.driverAxisValue(RobotMap.LEFT_JOYSTICK_Y_AXIS);
+  	double yAxis = Robot.oi.driverAxisValue(RobotMap.LEFT_JOYSTICK_Y_AXIS)*(-1);
     double xAxis = Robot.oi.driverAxisValue(RobotMap.LEFT_JOYSTICK_X_AXIS);
     
     	//Setting Motor values
-    double rightMotors = (yAxis - xAxis)*RobotMap.ARCADE_DRIVE_CONTROL_SCALING;
+    double rightMotors = (yAxis - xAxis)*RobotMap.ARCADE_DRIVE_CONTROL_SCALING*(-1);
     double leftMotors = (yAxis + xAxis)*RobotMap.ARCADE_DRIVE_CONTROL_SCALING;
     
     //Setting maximum and minimum speeds to the motors

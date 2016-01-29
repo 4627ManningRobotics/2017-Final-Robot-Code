@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4627.robot.subsystems;
 
 import org.usfirst.frc.team4627.robot.RobotMap;
+import org.usfirst.frc.team4627.robot.commands.ArcadeDrive;
 import org.usfirst.frc.team4627.robot.commands.GTADrive;
 
 import edu.wpi.first.wpilibj.CANJaguar;
@@ -43,7 +44,7 @@ public class DriveTrain extends Subsystem {
     	
     public void initDefaultCommand() {
         
-    setDefaultCommand(new GTADrive());
+    setDefaultCommand(new ArcadeDrive());
     	
     	
     }
