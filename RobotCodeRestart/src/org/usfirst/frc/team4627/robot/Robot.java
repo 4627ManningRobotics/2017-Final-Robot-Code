@@ -5,6 +5,8 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+
 import org.usfirst.frc.team4627.robot.subsystems.DriveTrain;
 
 /**
@@ -27,8 +29,8 @@ public class Robot extends IterativeRobot {
 	Command autonomousPlacementInt;
 	
 	//Autonomous dashboard commands
-    Command autonomousDefense;
-    Command autonomousPlacement;
+    SendableChooser autonomousDefense;
+    SendableChooser autonomousPlacement;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -36,6 +38,11 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = new OI();
+		
+		autonomousDefense = new SendableChooser();
+		
+
+		
 		
 		
 		
@@ -49,7 +56,7 @@ public class Robot extends IterativeRobot {
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
-        if (autonomousCommand != null) autonomousCommand.start();
+       // if (autonomousCommand != null) autonomousCommand.start();
     }
 
     /**
@@ -64,7 +71,7 @@ public class Robot extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-        if (autonomousCommand != null) autonomousCommand.cancel();
+     //   if (autonomousCommand != null) autonomousCommand.cancel();
     }
 
     /**
