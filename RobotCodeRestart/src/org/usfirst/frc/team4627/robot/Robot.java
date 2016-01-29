@@ -16,10 +16,19 @@ import org.usfirst.frc.team4627.robot.subsystems.DriveTrain;
  */
 public class Robot extends IterativeRobot {
 
+	//Enables the drive train subsystem to be used in commands
 	public static final DriveTrain driveTrain = new DriveTrain();
+	
+	//Enables OI
 	public static OI oi;
 
-    Command autonomousCommand;
+	//Autonomous run commands
+	Command autonomousDefenseInt;
+	Command autonomousPlacementInt;
+	
+	//Autonomous dashboard commands
+    Command autonomousDefense;
+    Command autonomousPlacement;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -27,6 +36,9 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = new OI();
+		
+		
+		
         // instantiate the command used for the autonomous period
        // autonomousCommand = new ExampleCommand();
     }
