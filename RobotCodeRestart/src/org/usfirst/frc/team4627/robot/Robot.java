@@ -7,6 +7,13 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 
+import org.usfirst.frc.team4627.robot.commands.AutoLowBar;
+import org.usfirst.frc.team4627.robot.commands.AutoMoat;
+import org.usfirst.frc.team4627.robot.commands.AutoPortacolis;
+import org.usfirst.frc.team4627.robot.commands.AutoRamparts;
+import org.usfirst.frc.team4627.robot.commands.AutoRockWall;
+import org.usfirst.frc.team4627.robot.commands.AutoRoughTerrain;
+import org.usfirst.frc.team4627.robot.commands.AutoTeeterTotters;
 import org.usfirst.frc.team4627.robot.subsystems.DriveTrain;
 
 /**
@@ -37,14 +44,20 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-		oi = new OI();
+		// Establish OI
+    	oi = new OI();
 		
+    	//  Sets autonomousDefense to a SendableChooser instance variable
 		autonomousDefense = new SendableChooser();
 		
-
-		
-		
-		
+		//Adding options to the SenableChooser instance variable, autonoumousDefense
+		autonomousDefense.addDefault("Low Bar",new AutoLowBar());
+		autonomousDefense.addObject("Moat",new AutoMoat());
+		autonomousDefense.addObject("Portacolis",new AutoPortacolis());
+		autonomousDefense.addObject("Ramparts",new AutoRamparts());
+		autonomousDefense.addObject("Rock Wall",new AutoRockWall());
+		autonomousDefense.addObject("Rough Terrain",new AutoRoughTerrain());
+		autonomousDefense.addObject("Teeter Totters",new AutoTeeterTotters());
 		
         // instantiate the command used for the autonomous period
        // autonomousCommand = new ExampleCommand();
