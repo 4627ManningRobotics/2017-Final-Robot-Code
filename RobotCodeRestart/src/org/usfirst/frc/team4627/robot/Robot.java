@@ -20,6 +20,7 @@ import org.usfirst.frc.team4627.robot.commands.AutoRamparts;
 import org.usfirst.frc.team4627.robot.commands.AutoRockWall;
 import org.usfirst.frc.team4627.robot.commands.AutoRoughTerrain;
 import org.usfirst.frc.team4627.robot.commands.AutoTeeterTotters;
+import org.usfirst.frc.team4627.robot.commands.GTADrive;
 import org.usfirst.frc.team4627.robot.subsystems.DriveTrain;
 
 /**
@@ -40,10 +41,13 @@ public class Robot extends IterativeRobot {
 	//Autonomous run commands
 	Command autonomousDefenseStart;
 	Command autonomousPlacementStart;
+	public static int driveModeStart;
 	
-	//Autonomous dashboard commands
+	// Dashboard commands
     SendableChooser autonomousDefense;
     SendableChooser autonomousPlacement;
+    SendableChooser driveMode;
+    
     
     //Creates autonomous order variable which starts true and is made false at the end of each defense command and activates
     //the autonomousPlacement command
@@ -75,7 +79,7 @@ public class Robot extends IterativeRobot {
 		//Sets autonomousPlacement to a SendableChooser instance variable
 		autonomousPlacement = new SendableChooser();
 		
-		//Adding options to the SenableChooser instance variable, autonoumousDefense
+		//Adding options to the SendableChooser instance variable, autonoumousDefense
 		autonomousPlacement.addDefault("Placement 1", new AutoPlacement1());
 		autonomousPlacement.addObject("Placement 2", new AutoPlacement2());
 		autonomousPlacement.addObject("Placement 3", new AutoPlacement3());
@@ -84,6 +88,15 @@ public class Robot extends IterativeRobot {
 		
 		//Makes all sendable choosers visable on the smart dashboard
 		SmartDashboard.putData("Autonomous Placement Selector", autonomousPlacement);
+		
+		
+		//Sets driveMode to a SendableChooser instance variable
+		driveMode = new SendableChooser();
+		
+		//Adding options to the SendableChooser instance variable, driveMode
+		driveMode.addDefault("GTA Drive", 1);
+		driveMode.addObject("Arcade Drive", 2);	
+		driveMode.addObject("Tank Drive", 3);	
 		
     }
 	
@@ -101,11 +114,21 @@ public class Robot extends IterativeRobot {
     	//Makes autonomousPlacementStart command variable equal to the selected command on the autonomousPlacement selectable chooser
     	autonomousPlacementStart = (Command) autonomousPlacement.getSelected();
     	
+    	//Makes driveModeStart int variable equal to the selected int on the driveMode selectable chooser
+    	driveModeStart = (int) driveMode.getSelected();
+    	
     	//Runs autonomousDefenseStart command
     	autonomousDefenseStart.start();
     	
-    	//Runs autonomousPlacementStart command
-    	autonomousPlacementStart.start();
+    	//Runs autonomousPlacementStart command which is dependent upon a defense command setting autoOrder to false
+    	if(autoOrder == false) {
+    		
+    		autonomousPlacementStart.start();
+    	
+    	}
+    	
+    	
+    	
     
     }
 
@@ -136,13 +159,17 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
+    	
         Scheduler.getInstance().run();
+        
     }
     
     /**
      * This function is called periodically during test mode
      */
     public void testPeriodic() {
+    	
         LiveWindow.run();
+        
     }
 }
