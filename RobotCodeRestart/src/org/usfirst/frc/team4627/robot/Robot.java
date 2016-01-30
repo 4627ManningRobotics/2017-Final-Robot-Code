@@ -20,7 +20,6 @@ import org.usfirst.frc.team4627.robot.commands.AutoRamparts;
 import org.usfirst.frc.team4627.robot.commands.AutoRockWall;
 import org.usfirst.frc.team4627.robot.commands.AutoRoughTerrain;
 import org.usfirst.frc.team4627.robot.commands.AutoTeeterTotters;
-import org.usfirst.frc.team4627.robot.commands.GTADrive;
 import org.usfirst.frc.team4627.robot.subsystems.DriveTrain;
 
 /**

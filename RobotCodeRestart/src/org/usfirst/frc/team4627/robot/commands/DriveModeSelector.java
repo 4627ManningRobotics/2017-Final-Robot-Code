@@ -2,33 +2,44 @@ package org.usfirst.frc.team4627.robot.commands;
 
 import org.usfirst.frc.team4627.robot.Robot;
 
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.Scheduler;
 
 /**
  *
  */
-public class AutoLowBar extends Command {
+public class DriveModeSelector extends Command {
 
-    public AutoLowBar() {
-        requires(Robot.driveTrain);
+    public DriveModeSelector() {
+       
+    requires(Robot.driveTrain);
+    			
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    
-        
-        Robot.driveTrain.setLeftMotors(0.25);
-        Robot.driveTrain.setRightMotors(-0.25);
-        Timer.delay(4);
+   if (Robot.driveModeStart == 1) {
+	   
+	   Scheduler.getInstance().add(new GTADrive());
+	   
+   }
+   
+   if (Robot.driveModeStart == 2) {
+	   
+	   Scheduler.getInstance().add(new ArcadeDrive());
+	   
+   }
+   
+   if (Robot.driveModeStart == 3) {
+	   
+	   Scheduler.getInstance().add(new TankDrive());
+	   
+   }
     
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-   
-        //Setting boolean so that auto placement runs (This has to be at the end of the command)
-        Robot.autoOrder = false;
     }
 
     // Make this return true when this Command no longer needs to run execute()

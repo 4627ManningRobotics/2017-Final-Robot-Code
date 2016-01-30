@@ -2,6 +2,7 @@ package org.usfirst.frc.team4627.robot.commands;
 
 import org.usfirst.frc.team4627.robot.Robot;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -15,6 +16,17 @@ public class AutoRamparts extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+   
+ 		Robot.driveTrain.setLeftMotors(0.5);
+		Robot.driveTrain.setRightMotors(-0.5);
+		Timer.delay(1.5);
+		Robot.driveTrain.setLeftMotors(0);
+		Robot.driveTrain.setRightMotors(-0.8);
+		Timer.delay(0.5);
+		Robot.driveTrain.setLeftMotors(0.6);
+		Robot.driveTrain.setRightMotors(-0.5);
+		Timer.delay(1);
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
