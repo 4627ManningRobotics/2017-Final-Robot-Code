@@ -120,12 +120,6 @@ public class Robot extends IterativeRobot {
     	//Runs autonomousDefenseStart command
     	autonomousDefenseStart.start();
     	
-    	//Runs autonomousPlacementStart command which is dependent upon a defense command setting autoOrder to false
-    	if(autoOrder == false) {
-    		
-    		autonomousPlacementStart.start();
-    	
-    	}
     	
     	
     	
@@ -136,6 +130,15 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
+    
+    	//Runs autonomousPlacementStart command which is dependent upon a defense command setting autoOrder to false
+    	if(autoOrder == false) {
+    		
+    		autonomousPlacementStart.start();
+    		autoOrder = true;
+    	
+    	}
+    	
         Scheduler.getInstance().run();
     }
 
@@ -144,7 +147,11 @@ public class Robot extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-     //   if (autonomousPlacement != null) autonomousPlacement.cancel();
+    	
+    	//Cancels the auto when teleop starts
+      if (autonomousPlacementStart != null) autonomousPlacementStart.cancel();
+      if (autonomousDefenseStart != null) autonomousDefenseStart.cancel();
+ 
     }
 
     /**
