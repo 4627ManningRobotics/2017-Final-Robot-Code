@@ -7,7 +7,6 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
 import org.usfirst.frc.team4627.robot.commands.AutoLowBar;
 import org.usfirst.frc.team4627.robot.commands.AutoMoat;
 import org.usfirst.frc.team4627.robot.commands.AutoPlacement1;
@@ -51,11 +50,7 @@ public class Robot extends IterativeRobot {
     //Creates autonomous order variable which starts true and is made false at the end of each defense command and activates
     //the autonomousPlacement command
     public static boolean autoOrder;
-
-    /**
-     * This function is run when the robot is first started up and should be
-     * used for any initialization code.
-     */
+    
     public void robotInit() {
 		// Establish OI
     	oi = new OI();
