@@ -97,6 +97,12 @@ public class Robot extends IterativeRobot {
 		driveMode.addObject("Arcade Drive", 2);	
 		driveMode.addObject("Tank Drive", 3);	
 		
+		//Showing commands on the smartDashboard
+		SmartDashboard.putData(Scheduler.getInstance());
+		
+		//Showing the command on the subsystem driveTrain
+		SmartDashboard.putData(driveTrain);
+		
     }
 	
 	public void disabledPeriodic() {
