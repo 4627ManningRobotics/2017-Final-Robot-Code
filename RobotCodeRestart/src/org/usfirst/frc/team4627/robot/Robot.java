@@ -89,6 +89,9 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putData("Autonomous Placement Selector", autonomousPlacement);
 		
 		
+		//final int variableName = 5; 
+		//SmartDashboard.putString("testValue", variableName +" PSI");
+		
 		//Sets driveMode to a SendableChooser instance variable
 		driveMode = new SendableChooser();
 		
