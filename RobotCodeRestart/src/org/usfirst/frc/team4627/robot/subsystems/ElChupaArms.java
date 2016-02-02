@@ -17,6 +17,7 @@ public class ElChupaArms extends Subsystem {
 	//Declaring Arm motors
 	Victor leftMotor = new Victor(RobotMap.EL_CHUPAS_LEFT_MOTOR);
 	Victor rightMotor = new Victor(RobotMap.EL_CHUPAS_RIGHT_MOTOR);
+	//Victor liftMotor = new Victor(RobotMap.EL_CHUPAS_LIFT_MOTOR);
 	
 	public void shootBoulder(double speed) {
 	
@@ -25,8 +26,14 @@ public class ElChupaArms extends Subsystem {
 		rightMotor.set(speed);
 		
 	}
-	
+	/*
+	public void liftArms(double speed) {
 		
+		liftMotor.set(speed);
+		
+	}
+	
+		*/
 		
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
