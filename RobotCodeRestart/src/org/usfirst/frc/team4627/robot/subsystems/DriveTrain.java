@@ -1,6 +1,6 @@
 package org.usfirst.frc.team4627.robot.subsystems;
 import org.usfirst.frc.team4627.robot.RobotMap;
-import org.usfirst.frc.team4627.robot.commands.DriveModeSelector;
+import org.usfirst.frc.team4627.robot.commands.GTADrive;
 import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -41,7 +41,7 @@ public class DriveTrain extends Subsystem {
     	
     public void initDefaultCommand() {
         
-    setDefaultCommand(new DriveModeSelector());
+    setDefaultCommand(new GTADrive());
     	
     	
     }

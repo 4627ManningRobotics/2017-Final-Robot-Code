@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4627.robot.subsystems;
 
 import org.usfirst.frc.team4627.robot.RobotMap;
+import org.usfirst.frc.team4627.robot.commands.ElChupasControl;
 
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -30,6 +31,7 @@ public class ElChupaArms extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
+    	setDefaultCommand(new ElChupasControl());
     	
     	
     	
