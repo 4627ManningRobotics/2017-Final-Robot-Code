@@ -20,6 +20,7 @@ import org.usfirst.frc.team4627.robot.commands.AutoRockWall;
 import org.usfirst.frc.team4627.robot.commands.AutoRoughTerrain;
 import org.usfirst.frc.team4627.robot.commands.AutoTeeterTotters;
 import org.usfirst.frc.team4627.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team4627.robot.subsystems.ElChupaArms;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -32,6 +33,10 @@ public class Robot extends IterativeRobot {
 
 	//Enables the drive train subsystem to be used in commands
 	public static final DriveTrain driveTrain = new DriveTrain();
+	
+	//Enables the El Chupa Arms subsystem to be used in commands
+	public static final ElChupaArms elChupaArms = new ElChupaArms();
+	
 	
 	//Enables OI
 	public static OI oi;
