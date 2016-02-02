@@ -71,6 +71,14 @@ public class RobotMap {
 		
 		
 		
+		//El Chupa values
+		
+		public static final int EL_CHUPAS_LEFT_MOTOR = 0;
+		public static final int EL_CHUPAS_RIGHT_MOTOR = 1;
+		
+		
+		
+		
 }
 		
 		
