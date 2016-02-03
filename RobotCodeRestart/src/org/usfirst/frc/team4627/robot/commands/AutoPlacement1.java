@@ -16,7 +16,7 @@ public class AutoPlacement1 extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-   
+   /*
     	 Robot.driveTrain.setLeftMotors(0.8);
          Robot.driveTrain.setRightMotors(-0.8);
          Timer.delay(2);
@@ -31,7 +31,11 @@ public class AutoPlacement1 extends Command {
          
          Robot.driveTrain.setRightMotors(-0.8);
          Timer.delay(2);
-    
+    */
+    	
+    	Robot.driveTrain.setLeftMotors(0);
+    	Robot.driveTrain.setRightMotors(0);
+    	Timer.delay(10);
     }
 
     // Called repeatedly when this Command is scheduled to run

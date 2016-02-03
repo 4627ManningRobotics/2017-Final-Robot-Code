@@ -2,6 +2,7 @@ package org.usfirst.frc.team4627.robot.commands;
 
 import org.usfirst.frc.team4627.robot.Robot;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -19,7 +20,10 @@ public class AutoTeeterTotters extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-  
+    	
+    	Robot.driveTrain.setLeftMotors(0);
+    	Robot.driveTrain.setRightMotors(0);
+    	Timer.delay(10);
         //Setting boolean so that auto placement runs (This has to be at the end of the command)
         Robot.autoOrder = false;
     }
