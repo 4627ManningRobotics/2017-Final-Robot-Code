@@ -43,13 +43,13 @@ public class Robot extends IterativeRobot {
 
 	//Autonomous run commands
 	Command autonomousDefenseStart;
-	Command autonomousPlacementStart;
-	public static int driveModeStart;
+//	Command autonomousPlacementStart;
+//	public static int driveModeStart;
 	
 	// Dashboard commands
     SendableChooser autonomousDefense;
-    SendableChooser autonomousPlacement;
-    SendableChooser driveMode;
+  //  SendableChooser autonomousPlacement;
+   // SendableChooser driveMode;
     
     
     //Creates autonomous order variable which starts true and is made false at the end of each defense command and activates
@@ -80,8 +80,6 @@ public class Robot extends IterativeRobot {
 		//Sets autonomousPlacement to a SendableChooser instance variable
 	//	autonomousPlacement = new SendableChooser();
 		
-		
-		//SmartDashboard.putString("testValue", "The robot current has 7 PSI");
 		
 		//Adding options to the SendableChooser instance variable, autonoumousDefense
 		//autonomousPlacement.addDefault("Placement 1", new AutoPlacement1());
@@ -127,9 +125,15 @@ public class Robot extends IterativeRobot {
     //	driveModeStart = (int) driveMode.getSelected();
     	
     	//Runs autonomousDefenseStart command
-    	.start();
+    	if (autonomousDefenseStart != null) autonomousDefenseStart.start();
     	
+    	//Runs autonomousPlacementStart command which is dependent upon a defense command setting autoOrder to false
+    /*	if(autoOrder == false) {
+    		
+    		autonomousPlacementStart.start();
     	
+    	}
+    	*/
     	
     	
     
@@ -139,15 +143,6 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
-    
-    	//Runs autonomousPlacementStart command which is dependent upon a defense command setting autoOrder to false
-    	if(autoOrder == false) {
-    		
-    		autonomousPlacementStart.start();
-    		autoOrder = true;
-    	
-    	}
-    	
         Scheduler.getInstance().run();
     }
 
@@ -156,11 +151,7 @@ public class Robot extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-    	
-    	//Cancels the auto when teleop starts
-      if (autonomousPlacementStart != null) autonomousPlacementStart.cancel();
-      if (autonomousDefenseStart != null) autonomousDefenseStart.cancel();
- 
+     //   if (autonomousPlacement != null) autonomousPlacement.cancel();
     }
 
     /**
@@ -175,6 +166,12 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
+    	
+    	int robotPressure;
+		
+		robotPressure = 5;
+		
+		SmartDashboard.putString("Air Pressure:", robotPressure + " PSI");
     	
         Scheduler.getInstance().run();
         

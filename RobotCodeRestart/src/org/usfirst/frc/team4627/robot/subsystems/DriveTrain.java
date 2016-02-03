@@ -1,10 +1,12 @@
 package org.usfirst.frc.team4627.robot.subsystems;
+import org.usfirst.frc.team4627.robot.Robot;
 import org.usfirst.frc.team4627.robot.RobotMap;
 import org.usfirst.frc.team4627.robot.commands.GTADrive;
 import org.usfirst.frc.team4627.robot.commands.TankDrive;
 
 import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
