@@ -43,6 +43,128 @@ public class DriveTrain extends Subsystem {
     		bottomRightMotor.set(speed);
     	}
     	
+    	public void autoLowBar() {
+    		
+    		Robot.driveTrain.setLeftMotors(0.25);
+    		Robot.driveTrain.setRightMotors(-0.25);
+    		Timer.delay(5);
+    		Robot.driveTrain.setLeftMotors(0);
+    		Robot.driveTrain.setRightMotors(0);
+    		
+    	}
+    	
+    	public void autoMoat() {
+    		
+    		Robot.driveTrain.setLeftMotors(0.45);
+    		Robot.driveTrain.setRightMotors(-0.45);
+    		Timer.delay(3);
+    		Robot.driveTrain.setLeftMotors(0);
+    		Robot.driveTrain.setRightMotors(0);
+    		
+    	}
+    	
+    	public void autoPortacolis() {
+    		
+    		Robot.driveTrain.setLeftMotors(0);
+    		Robot.driveTrain.setRightMotors(0);
+    		Timer.delay(5);
+    		
+    	}
+    	
+    	public void autoRamparts() {
+    		
+    		Robot.driveTrain.setLeftMotors(0.5);
+    		Robot.driveTrain.setRightMotors(-0.5);
+    		Timer.delay(1.5);
+    		Robot.driveTrain.setLeftMotors(0);
+    		Robot.driveTrain.setRightMotors(-0.8);
+    		Timer.delay(0.5);
+    		Robot.driveTrain.setLeftMotors(0.6);
+    		Robot.driveTrain.setRightMotors(-0.5);
+    		Timer.delay(1);	
+    		
+    	}
+    	
+    	public void autoRockWall() {
+    		
+        	Robot.driveTrain.setLeftMotors(0.6);	
+        	Robot.driveTrain.setRightMotors(-0.6);
+        	Timer.delay(4);
+    		
+    	}
+    	
+    	public void autoRoughTerrain() {
+    		
+    		Robot.driveTrain.setLeftMotors(0.5);
+    		Robot.driveTrain.setRightMotors(-0.5);
+    		Timer.delay(5);
+    		
+    	}
+    	
+    	public void autoTeeterTotters() {
+    		
+    		Robot.driveTrain.setLeftMotors(0);
+    		Robot.driveTrain.setRightMotors(0);
+    		Timer.delay(5);
+    		
+    	}
+    	
+    	public void autoPlacement1() {
+    		
+       	 Robot.driveTrain.setLeftMotors(0.8);
+         Robot.driveTrain.setRightMotors(-0.8);
+         Timer.delay(2);
+         
+         Robot.driveTrain.setLeftMotors(0);
+         Robot.driveTrain.setRightMotors(0);
+         Timer.delay(0.2);
+         
+         Robot.driveTrain.setLeftMotors(0.8);
+         Robot.driveTrain.setRightMotors(-0.1);
+         Timer.delay(1);
+         
+         Robot.driveTrain.setRightMotors(-0.8);
+         Timer.delay(2);
+    		
+    	}
+    	
+    	public void autoPlacement2() {
+    		
+    		Robot.driveTrain.setLeftMotors(0);
+    		Robot.driveTrain.setRightMotors(0);
+    		Timer.delay(5);
+    		
+    	}
+    	
+    	public void autoPlacement3() {
+    		
+    		Robot.driveTrain.setLeftMotors(0);
+    		Robot.driveTrain.setRightMotors(0);
+    		Timer.delay(5);
+    		
+    		
+    	}
+    	
+    	public void autoPlacement4() {
+    		
+    		Robot.driveTrain.setLeftMotors(0);
+    		Robot.driveTrain.setRightMotors(0);
+    		Timer.delay(5);
+    		
+    		
+    	}
+    	
+    	public void autoPlacement5() {
+    		
+    		Robot.driveTrain.setLeftMotors(0);
+    		Robot.driveTrain.setRightMotors(0);
+    		Timer.delay(5);
+    		
+    		
+    	}
+    			
+    			
+    	
     public void initDefaultCommand() {
         
     setDefaultCommand(new TankDrive());
