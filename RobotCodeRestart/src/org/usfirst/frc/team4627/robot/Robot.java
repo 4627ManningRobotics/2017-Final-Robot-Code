@@ -78,7 +78,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putData("Autonomous Defense Selector", autonomousDefense);
 		
 		//Sets autonomousPlacement to a SendableChooser instance variable
-	//	autonomousPlacement = new SendableChooser();
+		//autonomousPlacement = new SendableChooser();
 		
 		
 		//Adding options to the SendableChooser instance variable, autonoumousDefense
