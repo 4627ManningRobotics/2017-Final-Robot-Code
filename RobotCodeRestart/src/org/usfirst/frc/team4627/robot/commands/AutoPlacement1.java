@@ -33,8 +33,7 @@ public class AutoPlacement1 extends Command {
          Timer.delay(2);
     */
     	
-    	Robot.driveTrain.setLeftMotors(0);
-    	Robot.driveTrain.setRightMotors(0);
+    	System.out.println("Placement is working");
     	Timer.delay(10);
     }
 

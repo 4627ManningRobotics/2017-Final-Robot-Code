@@ -17,7 +17,7 @@ public class AutoRamparts extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
    
- 		Robot.driveTrain.setLeftMotors(0.5);
+ 		/*Robot.driveTrain.setLeftMotors(0.5);
 		Robot.driveTrain.setRightMotors(-0.5);
 		Timer.delay(1.5);
 		Robot.driveTrain.setLeftMotors(0);
@@ -26,6 +26,9 @@ public class AutoRamparts extends Command {
 		Robot.driveTrain.setLeftMotors(0.6);
 		Robot.driveTrain.setRightMotors(-0.5);
 		Timer.delay(1);
+		*/
+    	System.out.println("Running auto correctly");
+    	Timer.delay(10);
     	
     }
 
@@ -33,7 +36,9 @@ public class AutoRamparts extends Command {
     protected void execute() {
   
         //Setting boolean so that auto placement runs (This has to be at the end of the command)
-        Robot.autoOrder = false;
+       
+      
+        
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -43,6 +48,11 @@ public class AutoRamparts extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	
+    	if(Robot.autonomousPlacementStart != null) {
+    		Robot.autonomousPlacementStart.start();
+    	}
+    	
     }
 
     // Called when another command which requires one or more of the same
