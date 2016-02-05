@@ -21,6 +21,7 @@ public class AutoMoat extends Command {
     Robot.driveTrain.setRightMotors(0.5);
     Timer.delay(2);
     
+    System.out.println("AutoMoat is executing");
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -35,6 +36,11 @@ public class AutoMoat extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	
+    	if(Robot.autonomousPlacementStart != null) {
+    		Robot.autonomousPlacementStart.start();
+    	}
+    	
     }
 
     // Called when another command which requires one or more of the same

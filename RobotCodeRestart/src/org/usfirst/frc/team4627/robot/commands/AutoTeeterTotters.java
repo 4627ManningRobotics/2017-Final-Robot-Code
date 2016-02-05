@@ -16,15 +16,15 @@ public class AutoTeeterTotters extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+ 
+    
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	
-    	Robot.driveTrain.setLeftMotors(0);
-    	Robot.driveTrain.setRightMotors(0);
-    	Timer.delay(10);
-   
+    	System.out.println("AutoTeeterTotters is executing");
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -35,6 +35,9 @@ public class AutoTeeterTotters extends Command {
     // Called once after isFinished returns true
     protected void end() {
     	
+    	if(Robot.autonomousPlacementStart != null) {
+    		Robot.autonomousPlacementStart.start();
+    	}
     	
     	
     }

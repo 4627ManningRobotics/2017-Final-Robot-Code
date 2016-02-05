@@ -17,7 +17,7 @@ public class AutoRamparts extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
    
- 		/*Robot.driveTrain.setLeftMotors(0.5);
+ 		Robot.driveTrain.setLeftMotors(0.5);
 		Robot.driveTrain.setRightMotors(-0.5);
 		Timer.delay(1.5);
 		Robot.driveTrain.setLeftMotors(0);
@@ -26,9 +26,9 @@ public class AutoRamparts extends Command {
 		Robot.driveTrain.setLeftMotors(0.6);
 		Robot.driveTrain.setRightMotors(-0.5);
 		Timer.delay(1);
-		*/
-    	System.out.println("Running auto correctly");
-    	Timer.delay(10);
+		
+    	System.out.println("AutoRamparts is executing");
+    	
     	
     }
 

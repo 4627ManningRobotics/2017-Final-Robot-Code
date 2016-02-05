@@ -88,14 +88,6 @@ public class Robot extends IterativeRobot {
 		//Makes all sendable choosers visable on the smart dashboard
 		SmartDashboard.putData("Autonomous Placement Selector", autonomousPlacement);
 		
-		//Sets driveMode to a SendableChooser instance variable
-	//	driveMode = new SendableChooser();
-		
-		//Adding options to the SendableChooser instance variable, driveMode
-	//	driveMode.addDefault("GTA Drive", 1);
-		//driveMode.addObject("Arcade Drive", 2);	
-		//driveMode.addObject("Tank Drive", 3);	
-		
 		//Showing commands on the smartDashboard
 		SmartDashboard.putData(Scheduler.getInstance());
 		
@@ -115,19 +107,12 @@ public class Robot extends IterativeRobot {
     	autonomousDefenseStart = (Command) autonomousDefense.getSelected();
     	
     	//Makes autonomousPlacementStart command variable equal to the selected command on the autonomousPlacement selectable chooser
-    autonomousPlacementStart = (Command) autonomousPlacement.getSelected();
-    	
-    	//Makes driveModeStart int variable equal to the selected int on the driveMode selectable chooser
-    //	driveModeStart = (int) driveMode.getSelected();
+    	autonomousPlacementStart = (Command) autonomousPlacement.getSelected();
     	
     	//Runs autonomousDefenseStart command
     	if (autonomousDefenseStart != null) autonomousDefenseStart.start();
     	
 
-    	
-    	
-    	
-    
     }
 
     /**

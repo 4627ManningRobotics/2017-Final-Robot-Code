@@ -21,6 +21,9 @@ public class AutoRockWall extends Command {
     	Robot.driveTrain.setLeftMotors(0.6);	
     	Robot.driveTrain.setRightMotors(-0.6);
     	Timer.delay(4);
+    	
+    	System.out.println("AutoRockWall is executing");
+
     
     }
 
@@ -36,6 +39,11 @@ public class AutoRockWall extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	
+    	if(Robot.autonomousPlacementStart != null) {
+    		Robot.autonomousPlacementStart.start();
+    	}
+    	
     }
 
     // Called when another command which requires one or more of the same

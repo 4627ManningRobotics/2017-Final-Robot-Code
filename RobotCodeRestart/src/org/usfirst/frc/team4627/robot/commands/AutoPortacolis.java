@@ -15,6 +15,9 @@ public class AutoPortacolis extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+   
+    
+    	System.out.println("AutoPortacolis is executing");
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -29,6 +32,11 @@ public class AutoPortacolis extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	
+    	if(Robot.autonomousPlacementStart != null) {
+    		Robot.autonomousPlacementStart.start();
+    	}
+    	
     }
 
     // Called when another command which requires one or more of the same
