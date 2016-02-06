@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
+import org.usfirst.frc.team4627.robot.commands.AutoTargeting;
 import org.usfirst.frc.team4627.robot.commands.ShiftHigh;
 import org.usfirst.frc.team4627.robot.commands.ShiftLow;
 
@@ -20,11 +21,13 @@ public class OI {
 	//Declaring Buttons
 	Button a = new JoystickButton(driver, RobotMap.BUTTON_A);
 	Button b = new JoystickButton(driver, RobotMap.BUTTON_B);
+	Button start = new JoystickButton(operator, RobotMap.BUTTON_START);
 	
 		public OI () {
 			
 			a.whenPressed(new ShiftHigh());
 			b.whenPressed(new ShiftLow());
+			start.whenPressed(new AutoTargeting());
 				
 		}
 		

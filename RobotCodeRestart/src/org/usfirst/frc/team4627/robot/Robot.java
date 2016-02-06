@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.networktables.NetworkTable;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team4627.robot.commands.AutoLowBar;
@@ -30,6 +31,15 @@ import org.usfirst.frc.team4627.robot.subsystems.ElChupaArms;
  * directory.
  */
 public class Robot extends IterativeRobot {
+
+	public static double centerY;
+	public static double centerX;
+
+	
+ // GRIP table declared
+	NetworkTable gRIPDataTable = NetworkTable.getTable("GRIP/gripFilePublish");
+
+	
 
 	//Enables the drive train subsystem to be used in commands
 	public static final DriveTrain driveTrain = new DriveTrain();
@@ -112,6 +122,7 @@ public class Robot extends IterativeRobot {
     	//Runs autonomousDefenseStart command
     	if (autonomousDefenseStart != null) autonomousDefenseStart.start();
     	
+    	
 
     }
 
@@ -119,9 +130,27 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
-        Scheduler.getInstance().run();
-    	//Runs autonomousPlacementStart command which is dependent upon a defense command setting autoOrder to false
-
+        
+    	double[] yValue = new double[0];
+    	double[] xValue = new double[0];
+    	
+    	double[] dataArrayY = gRIPDataTable.getNumberArray("centerY", yValue);
+  
+    	for (int i = 0; i < dataArrayY.length; i++){
+        	centerY = dataArrayY[i];
+    	}
+    	
+    	
+    	
+    	double[] dataArrayX = gRIPDataTable.getNumberArray("centerX", xValue);
+    	  
+    	for (int i = 0; i < dataArrayX.length; i++){
+        	centerX = dataArrayX[i];
+    	}
+    	
+    	
+    	
+    	Scheduler.getInstance().run();
 
     }
 
@@ -145,6 +174,23 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
+    	
+    	double[] yValue = new double[0];
+    	double[] xValue = new double[0];
+    	
+    	double[] dataArrayY = gRIPDataTable.getNumberArray("centerY", yValue);
+  
+    	for (int i = 0; i < dataArrayY.length; i++){
+        	centerY = dataArrayY[i];
+    	}
+    	
+    	
+    	
+    	double[] dataArrayX = gRIPDataTable.getNumberArray("centerX", xValue);
+    	  
+    	for (int i = 0; i < dataArrayX.length; i++){
+        	centerX = dataArrayX[i];
+    	}
     	
     	int robotPressure;
 		
