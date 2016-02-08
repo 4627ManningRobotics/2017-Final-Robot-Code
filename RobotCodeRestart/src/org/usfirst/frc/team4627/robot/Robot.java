@@ -45,7 +45,6 @@ public class Robot extends IterativeRobot {
 	//Enables the El Chupa Arms subsystem to be used in commands
 	public static final ElChupaArms elChupaArms = new ElChupaArms();
 	
-	
 	//Enables OI
 	public static OI oi;
 

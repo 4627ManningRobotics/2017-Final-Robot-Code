@@ -5,13 +5,12 @@ import org.usfirst.frc.team4627.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-/**
- *
- */
+
 public class ArcadeDrive extends Command {
 
     public ArcadeDrive() {
     	
+    	//Requires driveTrain subsystem
         requires(Robot.driveTrain);
         
     }
@@ -24,11 +23,11 @@ public class ArcadeDrive extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     
-    	// Setting Axis values
+    // Setting Axis values
   	double yAxis = Robot.oi.driverAxisValue(RobotMap.LEFT_JOYSTICK_Y_AXIS)*(-1);
     double xAxis = Robot.oi.driverAxisValue(RobotMap.LEFT_JOYSTICK_X_AXIS);
     
-    	//Setting Motor values
+    //Setting Motor values
     double rightMotors = (yAxis - xAxis)*RobotMap.ARCADE_DRIVE_CONTROL_SCALING*(-1);
     double leftMotors = (yAxis + xAxis)*RobotMap.ARCADE_DRIVE_CONTROL_SCALING;
     
