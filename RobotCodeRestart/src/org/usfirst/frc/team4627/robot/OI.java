@@ -22,7 +22,8 @@ public class OI {
 	Button a = new JoystickButton(driver, RobotMap.BUTTON_A);
 	Button b = new JoystickButton(driver, RobotMap.BUTTON_B);
 	Button start = new JoystickButton(operator, RobotMap.BUTTON_START);
-	
+		
+	//Sets commands to run when buttons are pressed
 		public OI () {
 			
 			a.whenPressed(new ShiftHigh());
@@ -31,22 +32,19 @@ public class OI {
 				
 		}
 		
+	//Method for getting an axis value on the driver joystick
 	public double driverAxisValue (int axis) {
 		
 		return driver.getRawAxis(axis);
 		
 	}
 	
+	//Method for getting an axis value on the operator joystick
 	public double operatorAxisValue (int axis) {
 		
 		return operator.getRawAxis(axis);
 		
 	}
-	
-	
-	
-	
-	
 	
 	//// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
