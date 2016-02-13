@@ -1,22 +1,18 @@
 package org.usfirst.frc.team4627.robot.commands;
-
 import org.usfirst.frc.team4627.robot.Robot;
-
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
-
-/**
- *
- */
 public class AutoPlacement1 extends Command {
-
     public AutoPlacement1() {
-        requires(Robot.driveTrain);
+        // requires driveTrain
+    	requires(Robot.driveTrain);
     }
-
+   
+    
     // Called just before this Command runs the first time
     protected void initialize() {
- 
+    	
+    	// Sets the direction of the robot
     	 Robot.driveTrain.setLeftMotors(0.8);
          Robot.driveTrain.setRightMotors(-0.8);
          Timer.delay(2);
