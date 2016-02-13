@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import org.usfirst.frc.team4627.robot.commands.AutoTargeting;
 import org.usfirst.frc.team4627.robot.commands.ShiftHigh;
 import org.usfirst.frc.team4627.robot.commands.ShiftLow;
+import org.usfirst.frc.team4627.robot.commands.Shoot;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -22,13 +23,16 @@ public class OI {
 	Button a = new JoystickButton(driver, RobotMap.BUTTON_A);
 	Button b = new JoystickButton(driver, RobotMap.BUTTON_B);
 	Button start = new JoystickButton(operator, RobotMap.BUTTON_START);
+	Button x = new JoystickButton(operator, RobotMap.BUTTON_X);
 		
 	//Sets commands to run when buttons are pressed
 		public OI () {
 			
 			a.whenPressed(new ShiftHigh());
 			b.whenPressed(new ShiftLow());
-			start.whenPressed(new AutoTargeting());
+		//	start.whenPressed(new AutoTargeting());
+			x.whenPressed(new Shoot());
+			
 				
 		}
 		

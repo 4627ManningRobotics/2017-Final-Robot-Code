@@ -18,8 +18,8 @@ public class AutoRockWall extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
   
-    	Robot.driveTrain.setLeftMotors(0.6);	
-    	Robot.driveTrain.setRightMotors(-0.6);
+    	Robot.driveTrain.setLeftMotors(0.8);	
+    	Robot.driveTrain.setRightMotors(-0.8);
     	Timer.delay(4);
     	
     	System.out.println("AutoRockWall is executing");

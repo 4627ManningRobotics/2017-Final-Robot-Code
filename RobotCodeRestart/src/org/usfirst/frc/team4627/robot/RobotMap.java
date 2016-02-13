@@ -12,14 +12,14 @@ public class RobotMap {
 		public static final int OPERATOR_JOYSTICK = 1;
 
 		// Motor controller values
-		public static final int TOP_LEFT_MOTOR = 7;
-		public static final int TOP_RIGHT_MOTOR = 6;
-		public static final int BOTTOM_LEFT_MOTOR = 5;
-		public static final int BOTTOM_RIGHT_MOTOR = 8;
+		public static final int TOP_LEFT_MOTOR = 0;
+		public static final int TOP_RIGHT_MOTOR = 2;
+		public static final int BOTTOM_LEFT_MOTOR = 1;
+		public static final int BOTTOM_RIGHT_MOTOR = 3;
 	
 		//Pnuematics Values
 		public static final int COMPRESSOR_VALUE = 0;
-		public static final int GEAR_SHIFTER = 0;
+		public static final int GEAR_SHIFTER = 1;
 	
 		//Axis values
 		public static final int RIGHT_TRIGGER = 3;
@@ -60,13 +60,13 @@ public class RobotMap {
 		public static final int BUTTON_START = 8;
 		
 		//El Chupa values
-		public static final int EL_CHUPAS_LEFT_MOTOR = 3;
-		public static final int EL_CHUPAS_RIGHT_MOTOR = 4;
-		public static final int EL_CHUPAS_LIFT_MOTOR = 0;
-		public static final double EL_CHUPA_SHOOT_SCALING = 0.9;
-		public static final double EL_CHUPA_LIFT_SCALING = 0;
+		public static final int EL_CHUPAS_LEFT_MOTOR = 4;
+		public static final int EL_CHUPAS_RIGHT_MOTOR = 5;
+		public static final int EL_CHUPAS_LIFT_MOTOR = 6;
+		public static final double EL_CHUPA_SHOOT_SCALING = 0.99;
+		public static final double EL_CHUPA_LIFT_SCALING = 0.7;
 		public static final double EL_CHUPA_FIRING_SPEED = 0.9;
-
+		public static final int EL_CHUPAS_KICKER = 0;
 		
 		
 		

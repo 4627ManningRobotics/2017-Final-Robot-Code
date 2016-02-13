@@ -15,9 +15,10 @@ public class AutoPlacement4 extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    
+    	
     	System.out.println("Placement 4 is working");
-
+    	Robot.driveTrain.setLeftMotors(0);
+    	Robot.driveTrain.setRightMotors(0);
     	
     }
 

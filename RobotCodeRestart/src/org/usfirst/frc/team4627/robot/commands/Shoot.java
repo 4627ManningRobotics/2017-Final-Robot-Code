@@ -8,25 +8,22 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class AutoMoat extends Command {
+public class Shoot extends Command {
 
-    public AutoMoat() {
-    	requires(Robot.driveTrain);
+    public Shoot() {
+        requires(Robot.elChupaArms);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-   
-    Robot.driveTrain.setLeftMotors(0.7);
-    Robot.driveTrain.setRightMotors(-0.7);
-    Timer.delay(4);
-    
-    System.out.println("AutoMoat is executing");
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-   
+   Robot.elChupaArms.shootKicker(true);
+   Timer.delay(2);
+   Robot.elChupaArms.shootKicker(false);
+    
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -36,11 +33,6 @@ public class AutoMoat extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	
-    	if(Robot.autonomousPlacementStart != null) {
-    		Robot.autonomousPlacementStart.start();
-    	}
-    	
     }
 
     // Called when another command which requires one or more of the same
