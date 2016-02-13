@@ -3,12 +3,9 @@ import org.usfirst.frc.team4627.robot.Robot;
 import org.usfirst.frc.team4627.robot.RobotMap;
 import org.usfirst.frc.team4627.robot.commands.GTADrive;
 import org.usfirst.frc.team4627.robot.commands.StartupDrive;
-import org.usfirst.frc.team4627.robot.commands.TankDrive;
-
-import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.CANTalon;
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Solenoid;
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -23,6 +20,8 @@ public class DriveTrain extends Subsystem {
     	CANTalon bottomLeftMotor = new CANTalon(RobotMap.BOTTOM_LEFT_MOTOR);
     	CANTalon bottomRightMotor = new CANTalon(RobotMap.BOTTOM_RIGHT_MOTOR);
     	Solenoid gearShifter = new Solenoid(RobotMap.GEAR_SHIFTER);
+    	Encoder liftEncoder = new Encoder(0, 1, false);
+    	
     	
     	
     	public void shiftGear(boolean gear) {

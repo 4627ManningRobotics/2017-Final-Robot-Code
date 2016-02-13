@@ -11,18 +11,15 @@ public class AutoMoat extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-<<<<<<< HEAD
    
     Robot.driveTrain.setLeftMotors(0.7);
     Robot.driveTrain.setRightMotors(-0.7);
     Timer.delay(4);
     
-=======
     Robot.driveTrain.setLeftMotors(0.5);
     Robot.driveTrain.setRightMotors(0.5);
     Timer.delay(2);
 // Notification for us
->>>>>>> origin/master
     System.out.println("AutoMoat is executing");
     }
     // Called repeatedly when this Command is scheduled to run
