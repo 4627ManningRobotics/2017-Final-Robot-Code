@@ -35,6 +35,14 @@ import org.usfirst.frc.team4627.robot.subsystems.ElChupaArms;
  * directory.
  */
 
+/*
+ * Programmer Names: Ryan, Drew & Paul 
+ * 
+ * 
+ */
+
+
+
 public class Robot extends IterativeRobot {
 	
 	
@@ -64,6 +72,9 @@ public class Robot extends IterativeRobot {
 
 	public void robotInit() {
 
+		Robot.elChupaArms.setFeedback();
+		
+		
 		// Establish OI
 		oi = new OI ();
 
