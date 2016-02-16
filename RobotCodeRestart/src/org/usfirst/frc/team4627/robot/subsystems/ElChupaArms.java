@@ -1,13 +1,10 @@
 package org.usfirst.frc.team4627.robot.subsystems;
-
 import org.usfirst.frc.team4627.robot.RobotMap;
 import org.usfirst.frc.team4627.robot.commands.ElChupasControl;
-
 import edu.wpi.first.wpilibj.CANTalon;
-import edu.wpi.first.wpilibj.Counter;
+import edu.wpi.first.wpilibj.CANTalon.FeedbackDevice;
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Solenoid;
-import edu.wpi.first.wpilibj.Talon;
-import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -16,16 +13,22 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class ElChupaArms extends Subsystem {
 
 	//Declaring Arm motors
-	CANTalon leftMotor = new CANTalon(RobotMap.EL_CHUPAS_LEFT_MOTOR);
-	CANTalon rightMotor = new CANTalon(RobotMap.EL_CHUPAS_RIGHT_MOTOR);
+	//CANTalon leftMotor = new CANTalon(RobotMap.EL_CHUPAS_LEFT_MOTOR);
+	//CANTalon rightMotor = new CANTalon(RobotMap.EL_CHUPAS_RIGHT_MOTOR);
 	CANTalon liftMotor = new CANTalon(RobotMap.EL_CHUPAS_LIFT_MOTOR);
-	Solenoid kicker = new Solenoid(RobotMap.EL_CHUPAS_KICKER);
+	//Solenoid kicker = new Solenoid(RobotMap.EL_CHUPAS_KICKER);
+	private final Encoder liftEncoder = new Encoder(0, 1);
+	
+	
+/*	public void setFeedback() {
+		liftMotor.setFeedbackDevice(FeedbackDevice.);
+		liftMotor.configEncoderCodesPerRev(1024);
+	}*/
 	
 	public void shootBoulder(double speed) {
 	
-		
-		leftMotor.set(-speed);
-		rightMotor.set(speed);
+		//leftMotor.set(-speed);
+		//rightMotor.set(speed)l
 		
 	}
 	
@@ -37,9 +40,22 @@ public class ElChupaArms extends Subsystem {
  
     public void shootKicker(boolean shooting) {
 		
-		kicker.set(shooting);
+	//	kicker.set(shooting);
 		
 	}
+    
+    public void getEncoderValue() {
+    
+    	
+    		System.out.println(liftEncoder.getRaw());
+    		System.out.println(liftEncoder.get());
+    
+    }
+    public void resetEncoder() {
+    	
+    	liftEncoder.reset();
+    	
+    }
 	
 	public void initDefaultCommand() {
         // Set the default command for a subsystem here.

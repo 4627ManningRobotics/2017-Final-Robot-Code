@@ -1,9 +1,7 @@
 package org.usfirst.frc.team4627.robot;
-
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-
 import org.usfirst.frc.team4627.robot.commands.AutoTargeting;
 import org.usfirst.frc.team4627.robot.commands.ShiftHigh;
 import org.usfirst.frc.team4627.robot.commands.ShiftLow;
@@ -30,7 +28,7 @@ public class OI {
 			
 			a.whenPressed(new ShiftHigh());
 			b.whenPressed(new ShiftLow());
-		//	start.whenPressed(new AutoTargeting());
+			start.whenPressed(new AutoTargeting());
 			x.whenPressed(new Shoot());
 			
 				

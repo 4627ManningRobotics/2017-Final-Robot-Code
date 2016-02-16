@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team4627.robot;
 
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -33,8 +34,10 @@ import org.usfirst.frc.team4627.robot.subsystems.ElChupaArms;
  * creating this project, you must also update the manifest file in the resource
  * directory.
  */
-public class Robot extends IterativeRobot {
 
+public class Robot extends IterativeRobot {
+	
+	
 	// Declaring variables for retrieving values from GRIP
 	public static double centerY;
 	public static double centerX;
@@ -60,8 +63,13 @@ public class Robot extends IterativeRobot {
 	SendableChooser autonomousPlacement;
 
 	public void robotInit() {
+
 		// Establish OI
-		oi = new OI();
+		oi = new OI ();
+
+		
+		//Resets the encoder
+		//Robot.elChupaArms.resetEncoder();
 
 		// Sets autonomousDefense to a SendableChooser instance variable
 		autonomousDefense = new SendableChooser();
@@ -114,6 +122,9 @@ public class Robot extends IterativeRobot {
 
 		// Showing the command on the subsystem DriveTrain
 		SmartDashboard.putData(driveTrain);
+		
+		//Showing the command on the subsystem ElChupaArms
+		SmartDashboard.putData(elChupaArms);
 
 	}
 
@@ -146,6 +157,9 @@ public class Robot extends IterativeRobot {
      */
     public void autonomousPeriodic() {
         
+    	
+    	
+    	
     	//Declaring arrays of doubles to be used when retrieving data from GRIP during autonomous
     	double[] yValue = new double[0];
     	double[] xValue = new double[0];
@@ -196,6 +210,9 @@ public class Robot extends IterativeRobot {
      This function is called periodically during operator control
      */
     public void teleopPeriodic() {
+    	
+    	//Print out encoder values
+    	Robot.elChupaArms.getEncoderValue();
     	
     	//Sets array variables for retrieving values in GRIP
     	double[] yValue = new double[0];

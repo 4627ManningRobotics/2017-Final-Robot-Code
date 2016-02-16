@@ -26,15 +26,16 @@ public class AutoTargetingShoot extends Command {
     	
     Robot.elChupaArms.shootBoulder(RobotMap.EL_CHUPA_FIRING_SPEED);
     Timer.delay(0.75);
-    // Insert El Chupas shooting mechanism here
-    Timer.delay(1.0);
+    Robot.elChupaArms.shootKicker(true);
+    Timer.delay(0.5);
+    Robot.elChupaArms.shootKicker(false);
     Robot.elChupaArms.shootBoulder(0);
     
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true
