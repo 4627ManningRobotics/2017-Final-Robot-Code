@@ -28,15 +28,15 @@ public class DriveTrain extends Subsystem {
     	//Setting the speed of motors
     	public void setLeftMotors(double speed) {
     		
-    		//topLeftMotor.set(speed);
-    		//bottomLeftMotor.set(speed);
+    		topLeftMotor.set(speed);
+    		bottomLeftMotor.set(speed);
     		
     	}
 
     	public void setRightMotors(double speed) {
     		
-    		//topRightMotor.set(speed);
-    		//bottomRightMotor.set(speed);
+    		topRightMotor.set(speed);
+    		bottomRightMotor.set(speed);
     	}
     			
     			

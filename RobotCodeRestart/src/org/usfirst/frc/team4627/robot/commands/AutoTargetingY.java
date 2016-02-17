@@ -1,16 +1,15 @@
 package org.usfirst.frc.team4627.robot.commands;
-
 import org.usfirst.frc.team4627.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-/**
- *
- */
+
 public class AutoTargetingY extends Command {
 
     public AutoTargetingY() {
+    	
        requires(Robot.elChupaArms);
+    
     }
 
     // Called just before this Command runs the first time
@@ -20,14 +19,15 @@ public class AutoTargetingY extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     
-   double yDiff = (Robot.centerY - 120);
+  double yDiff = (Robot.centerY - 120);
    
-   double mappedDiff = yDiff /120;
+  int mappedDiff = (int)yDiff;
     
-//   Robot.elChupaArms.liftArms(mappedDiff);
+  mappedDiff = mappedDiff*10;
+  
+  Robot.elChupaArms.motorPosition = Robot.elChupaArms.motorPosition + mappedDiff;
    
-   
-    }
+  }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {

@@ -20,21 +20,14 @@ public class ElChupaArms extends Subsystem {
     
 	public int motorPosition = 0;
 	
-	
-	
 	public void setUpEncoder() {
 		
 		liftMotor.changeControlMode(CANTalon.TalonControlMode.Position);
 		liftMotor.setFeedbackDevice(FeedbackDevice.QuadEncoder);
 		liftMotor.setPID(1.9, 0.0, 0.0);
-		liftMotor.enableControl();
-		//liftMotor.set(1500);
-		
-		
+		liftMotor.enableControl();	
 		
 	}
-	
-
 	
 	public void shootBoulder(double speed) {
 	
@@ -45,14 +38,13 @@ public class ElChupaArms extends Subsystem {
  
     public void shootKicker(boolean shooting) {
 		
-	//	kicker.set(shooting);
+    	//kicker.set(shooting);
 		
 	}
     
     public double getEncoderValue() {
 
-   	return liftMotor.get();
-    	
+    	return liftMotor.get();
     	
     }
     
@@ -61,23 +53,10 @@ public class ElChupaArms extends Subsystem {
     	liftMotor.set(motorPosition);
     	
     }
-    
-    
-    
-    
-  /* public void resetEncoder() {
-    	
-    	liftEncoder.reset();
-    	
-    }*/
 	
 	public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+	
     	setDefaultCommand(new ElChupasControl());
-    	
-    	
-    	
     	
     }
 }
