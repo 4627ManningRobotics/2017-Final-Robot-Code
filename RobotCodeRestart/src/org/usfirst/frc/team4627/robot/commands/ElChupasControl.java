@@ -29,8 +29,24 @@ public class ElChupasControl extends Command {
     
     
     double leftY = Robot.oi.operatorAxisValue(RobotMap.LEFT_JOYSTICK_Y_AXIS);
+
+    
+    if (leftY > 0) {
+    	if (Robot.elChupaArms.motorPosition < RobotMap.EL_CHUPAS_MAX_LIFT) {  	
+    	Robot.elChupaArms.motorPosition+=10;
+    	}
+    }
+    
+    if (leftY < 0) {
+    	
+    	if (Robot.elChupaArms.motorPosition >= RobotMap.EL_CHUPAS_MIN_LIFT) {
     		
-    Robot.elChupaArms.liftArms(leftY*RobotMap.EL_CHUPA_LIFT_SCALING);
+    	Robot.elChupaArms.motorPosition-=10;
+    	}
+    }
+    
+   
+    Robot.elChupaArms.setMotor();
     
     
     

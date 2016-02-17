@@ -38,6 +38,9 @@ import org.usfirst.frc.team4627.robot.subsystems.ElChupaArms;
 /*
  * Programmer Names: Ryan, Drew & Paul 
  * 
+ * LIABILITY WAVER:
+ * IF ANYTHING IS WRONG IT IS 100% ELECTRICAL TEAM'S  FAULT
+ * 
  * 
  */
 
@@ -72,7 +75,7 @@ public class Robot extends IterativeRobot {
 
 	public void robotInit() {
 
-		Robot.elChupaArms.setFeedback();
+		Robot.elChupaArms.setUpEncoder();
 		
 		
 		// Establish OI
@@ -223,7 +226,7 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
     	
     	//Print out encoder values
-    	Robot.elChupaArms.getEncoderValue();
+    	System.out.println(Robot.elChupaArms.getEncoderValue());
     	
     	//Sets array variables for retrieving values in GRIP
     	double[] yValue = new double[0];

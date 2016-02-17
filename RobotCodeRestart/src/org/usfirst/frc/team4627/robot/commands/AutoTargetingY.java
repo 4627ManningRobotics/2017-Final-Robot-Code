@@ -24,7 +24,7 @@ public class AutoTargetingY extends Command {
    
    double mappedDiff = yDiff /120;
     
-   Robot.elChupaArms.liftArms(mappedDiff);
+//   Robot.elChupaArms.liftArms(mappedDiff);
    
    
     }
