@@ -26,6 +26,7 @@ import org.usfirst.frc.team4627.robot.commands.AutoRoughTerrain;
 import org.usfirst.frc.team4627.robot.commands.AutoTeeterTotters;
 import org.usfirst.frc.team4627.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team4627.robot.subsystems.ElChupaArms;
+import org.usfirst.frc.team4627.robot.subsystems.Sensors;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -61,6 +62,10 @@ public class Robot extends IterativeRobot {
 
 	// Enables the El Chupa Arms subsystem to be used in commands
 	public static final ElChupaArms elChupaArms = new ElChupaArms();
+	
+	// Enables the Sensors subsystem to be used in commands
+	public static final Sensors sensors = new Sensors();
+	
 
 	// Enables OI
 	public static OI oi;
@@ -232,7 +237,10 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
     	
     	//Print out encoder values
-    	System.out.println(Robot.elChupaArms.getEncoderValue());
+    	//System.out.println(Robot.elChupaArms.getEncoderValue());
+    	
+    	//Print gyroscope values
+    	System.out.println(Robot.sensors.getGyroAngle());
     	
     	//Sets array variables for retrieving values in GRIP
     	double[] yValue = new double[0];

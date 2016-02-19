@@ -28,7 +28,7 @@ public class ElChupasControl extends Command {
     Robot.elChupaArms.shootBoulder((rightTrigger - leftTrigger)* RobotMap.EL_CHUPA_SHOOT_SCALING);
     
     
-    double leftY = Robot.oi.operatorAxisValue(RobotMap.LEFT_JOYSTICK_Y_AXIS);
+    double leftY = Robot.oi.operatorAxisValue(-RobotMap.LEFT_JOYSTICK_Y_AXIS);
 
     
     if (leftY > 0) {

@@ -26,6 +26,8 @@ public class AutoTargetingY extends Command {
   mappedDiff = mappedDiff*10;
   
   Robot.elChupaArms.motorPosition = Robot.elChupaArms.motorPosition + mappedDiff;
+  
+  Robot.elChupaArms.setMotor();
    
   }
 

@@ -1,5 +1,4 @@
 package org.usfirst.frc.team4627.robot.commands;
-
 import org.usfirst.frc.team4627.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -10,7 +9,10 @@ import edu.wpi.first.wpilibj.command.Command;
 public class AutoTargetingX extends Command {
 
     public AutoTargetingX() {
+    	
        requires(Robot.driveTrain);
+       requires(Robot.sensors);
+  
     }
 
     // Called just before this Command runs the first time

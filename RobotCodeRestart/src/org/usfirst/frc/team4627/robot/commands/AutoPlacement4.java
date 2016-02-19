@@ -3,6 +3,7 @@ package org.usfirst.frc.team4627.robot.commands;
 import org.usfirst.frc.team4627.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.Scheduler;
 
 /**
  *
@@ -19,6 +20,9 @@ public class AutoPlacement4 extends Command {
     	System.out.println("Placement 4 is working");
     	Robot.driveTrain.setLeftMotors(0);
     	Robot.driveTrain.setRightMotors(0);
+    	
+        Scheduler.getInstance().add( new AutoTargeting());
+
     	
     }
 

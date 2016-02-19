@@ -4,6 +4,7 @@ import org.usfirst.frc.team4627.robot.Robot;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.Scheduler;
 
 /**
  *
@@ -24,6 +25,8 @@ public class AutoPlacement3 extends Command {
     	Robot.driveTrain.setLeftMotors(0);
     	Robot.driveTrain.setRightMotors(0);
     	
+        Scheduler.getInstance().add( new AutoTargeting());
+
     }
 
     // Called repeatedly when this Command is scheduled to run

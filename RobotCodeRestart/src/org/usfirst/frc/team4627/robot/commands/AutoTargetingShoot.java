@@ -29,6 +29,7 @@ public class AutoTargetingShoot extends Command {
     Robot.elChupaArms.shootKicker(true);
     Timer.delay(0.5);
     Robot.elChupaArms.shootKicker(false);
+    Timer.delay(0.5);
     Robot.elChupaArms.shootBoulder(0);
     
     }

@@ -1,9 +1,14 @@
 package org.usfirst.frc.team4627.robot.subsystems;
 import org.usfirst.frc.team4627.robot.RobotMap;
 import org.usfirst.frc.team4627.robot.commands.StartupDrive;
+
+import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.CANTalon;
+import edu.wpi.first.wpilibj.SPI;
+import edu.wpi.first.wpilibj.SPI.Port;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.interfaces.Gyro;
 
 /**
  *
@@ -17,6 +22,7 @@ public class DriveTrain extends Subsystem {
     	CANTalon bottomLeftMotor = new CANTalon(RobotMap.BOTTOM_LEFT_MOTOR);
     	CANTalon bottomRightMotor = new CANTalon(RobotMap.BOTTOM_RIGHT_MOTOR);
     	//Solenoid gearShifter = new Solenoid(RobotMap.GEAR_SHIFTER);
+
     	
     	
     	public void shiftGear(boolean gear) {
@@ -43,7 +49,7 @@ public class DriveTrain extends Subsystem {
     	
     public void initDefaultCommand() {
         
-    setDefaultCommand(new StartupDrive());
+    	setDefaultCommand(new StartupDrive());
     	
     	
     }

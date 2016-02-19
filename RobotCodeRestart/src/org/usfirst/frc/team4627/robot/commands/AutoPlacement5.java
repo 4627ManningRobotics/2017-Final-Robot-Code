@@ -2,7 +2,9 @@ package org.usfirst.frc.team4627.robot.commands;
 
 import org.usfirst.frc.team4627.robot.Robot;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.Scheduler;
 
 /**
  *
@@ -10,11 +12,22 @@ import edu.wpi.first.wpilibj.command.Command;
 public class AutoPlacement5 extends Command {
 
     public AutoPlacement5() {
+    	
         requires(Robot.driveTrain);
+        
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	
+    	Robot.driveTrain.setLeftMotors(-0.5);
+    	Robot.driveTrain.setRightMotors(-0.5);
+    	Timer.delay(0.3);
+    	Robot.driveTrain.setLeftMotors(0);
+    	Robot.driveTrain.setRightMotors(0);
+    	
+        Scheduler.getInstance().add( new AutoTargeting());
+
    
     	System.out.println("Placement 5 is working");
 

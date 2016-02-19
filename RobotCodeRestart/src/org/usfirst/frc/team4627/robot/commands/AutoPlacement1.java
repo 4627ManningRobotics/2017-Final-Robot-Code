@@ -25,7 +25,6 @@ public class AutoPlacement1 extends Command {
          Robot.driveTrain.setLeftMotors(0);
          Robot.driveTrain.setLeftMotors(0);
          
-         Scheduler.getInstance().add( new AutoTargeting());
 
     
     }

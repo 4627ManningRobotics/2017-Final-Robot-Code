@@ -2,6 +2,7 @@ package org.usfirst.frc.team4627.robot.commands;
 import org.usfirst.frc.team4627.robot.Robot;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.Scheduler;
 
 /**
  *
@@ -20,7 +21,9 @@ public class AutoPlacement2 extends Command {
     	Timer.delay(0.75);
     	Robot.driveTrain.setLeftMotors(0);
     	Robot.driveTrain.setRightMotors(0);
-	System.out.println("Placement 2 is working");
+    	System.out.println("Placement 2 is working");
+
+        Scheduler.getInstance().add( new AutoTargeting());
 
     }
 
