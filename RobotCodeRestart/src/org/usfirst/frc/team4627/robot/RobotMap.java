@@ -66,7 +66,7 @@ public class RobotMap {
 		public static final double EL_CHUPA_SHOOT_SCALING = 0.99;
 		public static final double EL_CHUPA_FIRING_SPEED = 0.9;
 		public static final int EL_CHUPAS_KICKER = 0;
-		public static final int EL_CHUPAS_MAX_LIFT = 2000;
+		public static final int EL_CHUPAS_MAX_LIFT = 1500;
 		public static final int EL_CHUPAS_MIN_LIFT = 10;
 		
 		

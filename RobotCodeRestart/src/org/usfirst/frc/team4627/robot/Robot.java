@@ -139,6 +139,12 @@ public class Robot extends IterativeRobot {
 		
 		//Showing the command on the subsystem ElChupaArms
 		SmartDashboard.putData(elChupaArms);
+		
+		//Showing the value of centerY on the smart dashboard
+		SmartDashboard.putNumber("The value of centerY is ", Robot.centerY);
+		
+		//Showing the value of centerX on the smart dashboard
+		SmartDashboard.putNumber("The value of centerX is ", Robot.centerX);
 
 	}
 

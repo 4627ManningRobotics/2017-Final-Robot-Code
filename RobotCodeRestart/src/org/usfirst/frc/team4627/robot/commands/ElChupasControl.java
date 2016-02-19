@@ -33,7 +33,7 @@ public class ElChupasControl extends Command {
     
     if (leftY > 0) {
     	if (Robot.elChupaArms.motorPosition < RobotMap.EL_CHUPAS_MAX_LIFT) {  	
-    	Robot.elChupaArms.motorPosition+=10;
+    	Robot.elChupaArms.motorPosition+=5;
     	}
     }
     
@@ -41,7 +41,7 @@ public class ElChupasControl extends Command {
     	
     	if (Robot.elChupaArms.motorPosition >= RobotMap.EL_CHUPAS_MIN_LIFT) {
     		
-    	Robot.elChupaArms.motorPosition-=10;
+    	Robot.elChupaArms.motorPosition-=5;
     	}
     }
     
