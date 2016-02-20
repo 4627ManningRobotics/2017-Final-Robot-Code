@@ -1,7 +1,6 @@
 
 package org.usfirst.frc.team4627.robot;
 
-import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -23,6 +22,9 @@ import org.usfirst.frc.team4627.robot.commands.AutoPortacolis;
 import org.usfirst.frc.team4627.robot.commands.AutoRamparts;
 import org.usfirst.frc.team4627.robot.commands.AutoRockWall;
 import org.usfirst.frc.team4627.robot.commands.AutoRoughTerrain;
+import org.usfirst.frc.team4627.robot.commands.AutoTargetingShoot;
+import org.usfirst.frc.team4627.robot.commands.AutoTargetingX;
+import org.usfirst.frc.team4627.robot.commands.AutoTargetingY;
 import org.usfirst.frc.team4627.robot.commands.AutoTeeterTotters;
 import org.usfirst.frc.team4627.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team4627.robot.subsystems.ElChupaArms;
@@ -151,6 +153,9 @@ public class Robot extends IterativeRobot {
 		//Showing the value of centerX on the smart dashboard
 		SmartDashboard.putNumber("The value of centerX is ", Robot.centerX);
 
+		SmartDashboard.putData("AutoTarget X", new AutoTargetingX());
+		SmartDashboard.putData("AutoTarget Y", new AutoTargetingY());
+		SmartDashboard.putData("AutoTarget Shoot", new AutoTargetingShoot());
 	}
 
 	public void disabledPeriodic() {
@@ -163,7 +168,7 @@ public class Robot extends IterativeRobot {
 
     public void autonomousInit() {
     	
-    	
+    	//elChupaArms.zeroMotorInPlace();
     	//Makes autonomousDefenseStart command variable equal to the selected command on the autonomousDefense selectable chooser
     	autonomousDefenseStart = (Command) autonomousDefense.getSelected();
     	
@@ -240,7 +245,7 @@ public class Robot extends IterativeRobot {
     	//System.out.println(Robot.elChupaArms.getEncoderValue());
     	
     	//Print gyroscope values
-    	System.out.println(Robot.sensors.getGyroAngle());
+    	//System.out.println(Robot.sensors.getGyroAngle());
     	
     	//Sets array variables for retrieving values in GRIP
     	double[] yValue = new double[0];
@@ -274,6 +279,7 @@ public class Robot extends IterativeRobot {
 
 		// Puts the robotPressure variable on the smart dashboard
 		SmartDashboard.putString("Air Pressure:", robotPressure + " PSI");
+		SmartDashboard.putNumber("Chupas Position", elChupaArms.getEncoderValue());
 
 		// Default code, do not delete
 		Scheduler.getInstance().run();

@@ -17,8 +17,12 @@ public class AutoRoughTerrain extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     
-    	Robot.driveTrain.setLeftMotors(0.5);
-    	Robot.driveTrain.setRightMotors(-0.5);
+    	Robot.elChupaArms.motorPosition = 1200;
+    	Robot.elChupaArms.setMotor();
+    	
+    	Timer.delay(1);
+    	Robot.driveTrain.setLeftMotors(0.6);
+    	Robot.driveTrain.setRightMotors(-0.6);
     	Timer.delay(3);
     
     	System.out.println("AutoRoughTerrain is executing");

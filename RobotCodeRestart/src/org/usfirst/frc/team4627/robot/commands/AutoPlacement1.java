@@ -2,7 +2,6 @@ package org.usfirst.frc.team4627.robot.commands;
 import org.usfirst.frc.team4627.robot.Robot;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.Scheduler;
 public class AutoPlacement1 extends Command {
     public AutoPlacement1() {
         // requires driveTrain
@@ -15,6 +14,7 @@ public class AutoPlacement1 extends Command {
         
    	System.out.println("Placement 1 is working");
    	
+   	/*
     	// Sets the direction of the robot
     	 Robot.driveTrain.setLeftMotors(0.8);
          Robot.driveTrain.setRightMotors(0.8);
@@ -24,7 +24,7 @@ public class AutoPlacement1 extends Command {
          Timer.delay(1);
          Robot.driveTrain.setLeftMotors(0);
          Robot.driveTrain.setLeftMotors(0);
-         
+      */   
 
     
     }

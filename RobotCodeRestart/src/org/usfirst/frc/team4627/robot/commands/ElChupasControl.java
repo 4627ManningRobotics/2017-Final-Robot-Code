@@ -28,16 +28,16 @@ public class ElChupasControl extends Command {
     Robot.elChupaArms.shootBoulder((rightTrigger - leftTrigger)* RobotMap.EL_CHUPA_SHOOT_SCALING);
     
     
-    double leftY = Robot.oi.operatorAxisValue(-RobotMap.LEFT_JOYSTICK_Y_AXIS);
+    double leftY = -Robot.oi.operatorAxisValue(RobotMap.LEFT_JOYSTICK_Y_AXIS);
 
     
-    if (leftY > 0) {
+    if (leftY > 0.1) {
     	if (Robot.elChupaArms.motorPosition < RobotMap.EL_CHUPAS_MAX_LIFT) {  	
     	Robot.elChupaArms.motorPosition+=5;
     	}
     }
     
-    if (leftY < 0) {
+    if (leftY < -0.1) {
     	
     	if (Robot.elChupaArms.motorPosition >= RobotMap.EL_CHUPAS_MIN_LIFT) {
     		

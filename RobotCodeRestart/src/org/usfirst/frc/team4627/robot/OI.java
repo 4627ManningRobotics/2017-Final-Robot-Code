@@ -2,7 +2,9 @@ package org.usfirst.frc.team4627.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
 import org.usfirst.frc.team4627.robot.commands.AutoTargeting;
+import org.usfirst.frc.team4627.robot.commands.ResetChupasEncoder;
 import org.usfirst.frc.team4627.robot.commands.ShiftHigh;
 import org.usfirst.frc.team4627.robot.commands.ShiftLow;
 import org.usfirst.frc.team4627.robot.commands.Shoot;
@@ -22,14 +24,17 @@ public class OI {
 	Button b = new JoystickButton(driver, RobotMap.BUTTON_B);
 	Button start = new JoystickButton(operator, RobotMap.BUTTON_START);
 	Button x = new JoystickButton(operator, RobotMap.BUTTON_X);
+	Button back = new JoystickButton(operator, RobotMap.BUTTON_BACK);
 		
 	//Sets commands to run when buttons are pressed
 		public OI () {
 			
 			a.whenPressed(new ShiftHigh());
 			b.whenPressed(new ShiftLow());
-			start.whenPressed(new AutoTargeting());
+			//start.whenPressed(new AutoTargeting());
 			x.whenPressed(new Shoot());
+			back.whenPressed(new ResetChupasEncoder());
+			
 			
 				
 		}

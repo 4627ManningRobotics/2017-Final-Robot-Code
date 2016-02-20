@@ -23,7 +23,7 @@ public class AutoTargetingY extends Command {
    
   int mappedDiff = (int)yDiff;
     
-  mappedDiff = mappedDiff*10;
+  mappedDiff = mappedDiff*-10;
   
   Robot.elChupaArms.motorPosition = Robot.elChupaArms.motorPosition + mappedDiff;
   

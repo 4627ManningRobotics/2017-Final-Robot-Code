@@ -19,7 +19,7 @@ public class RobotMap {
 	
 		//Pnuematics Values
 		public static final int COMPRESSOR_VALUE = 0;
-		public static final int GEAR_SHIFTER = 1;
+		public static final int GEAR_SHIFTER = 0;
 	
 		//Axis values
 		public static final int RIGHT_TRIGGER = 3;
@@ -65,9 +65,9 @@ public class RobotMap {
 		public static final int EL_CHUPAS_LIFT_MOTOR = 6;
 		public static final double EL_CHUPA_SHOOT_SCALING = 0.99;
 		public static final double EL_CHUPA_FIRING_SPEED = 0.9;
-		public static final int EL_CHUPAS_KICKER = 0;
-		public static final int EL_CHUPAS_MAX_LIFT = 1500;
-		public static final int EL_CHUPAS_MIN_LIFT = 10;
+		public static final int EL_CHUPAS_KICKER = 1;
+		public static final int EL_CHUPAS_MAX_LIFT = 1800;
+		public static final int EL_CHUPAS_MIN_LIFT = -100;
 		
 		
 		

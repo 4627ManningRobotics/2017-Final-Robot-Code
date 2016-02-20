@@ -26,8 +26,8 @@ public class AutoTargetingX extends Command {
    
    double mappedDiff = xDiff /160;
     
-   Robot.driveTrain.setLeftMotors(-mappedDiff);
-   Robot.driveTrain.setRightMotors(-mappedDiff);
+   Robot.driveTrain.setLeftMotors(mappedDiff);
+   Robot.driveTrain.setRightMotors(mappedDiff);
    
     }
 
