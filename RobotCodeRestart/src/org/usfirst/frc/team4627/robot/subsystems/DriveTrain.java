@@ -3,6 +3,7 @@ import org.usfirst.frc.team4627.robot.RobotMap;
 import org.usfirst.frc.team4627.robot.commands.StartupDrive;
 
 import edu.wpi.first.wpilibj.CANTalon;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -16,13 +17,13 @@ public class DriveTrain extends Subsystem {
     	CANTalon topRightMotor = new CANTalon(RobotMap.TOP_RIGHT_MOTOR);
     	CANTalon bottomLeftMotor = new CANTalon(RobotMap.BOTTOM_LEFT_MOTOR);
     	CANTalon bottomRightMotor = new CANTalon(RobotMap.BOTTOM_RIGHT_MOTOR);
-    	//Solenoid gearShifter = new Solenoid(RobotMap.GEAR_SHIFTER);
+    	Solenoid gearShifter = new Solenoid(RobotMap.GEAR_SHIFTER);
 
     	
     	
     	public void shiftGear(boolean gear) {
     		
-    		//gearShifter.set(gear);
+    		gearShifter.set(gear);
     		
     	}
 

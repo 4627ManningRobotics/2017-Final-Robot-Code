@@ -60,6 +60,14 @@ public class ElChupaArms extends Subsystem {
     	liftMotor.setPosition(0);
     
     }
+    
+    public void setMotorAutoStart() {
+    	
+    	
+    	motorPosition = 1800;
+    	liftMotor.setPosition(1800);
+    	
+    }
 	
 	public void initDefaultCommand() {
 	

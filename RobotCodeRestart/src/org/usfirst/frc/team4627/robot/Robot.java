@@ -168,7 +168,7 @@ public class Robot extends IterativeRobot {
 
     public void autonomousInit() {
     	
-    	//elChupaArms.zeroMotorInPlace();
+    	elChupaArms.setMotorAutoStart();
     	//Makes autonomousDefenseStart command variable equal to the selected command on the autonomousDefense selectable chooser
     	autonomousDefenseStart = (Command) autonomousDefense.getSelected();
     	
