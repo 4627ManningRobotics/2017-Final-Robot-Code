@@ -33,7 +33,7 @@ public class ElChupaArms extends Subsystem {
 		//Set up slave motor
 		liftMotorSlave.changeControlMode(CANTalon.TalonControlMode.Follower);
 		liftMotorSlave.set(liftMotorMaster.getDeviceID());
-		liftMotorSlave.reverseOutput(true);
+		liftMotorSlave.reverseOutput(false);
 		
 	}
 	

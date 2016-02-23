@@ -69,7 +69,7 @@ public class RobotMap {
 		public static final int EL_CHUPAS_MIN_LIFT = -1000;
 		
 		public static final int EL_CHUPAS_LIFT_MOTOR_MASTER = 6;
-		public static final int EL_CHUPAS_LIFT_MOTOR_SLAVE = 8;
+		public static final int EL_CHUPAS_LIFT_MOTOR_SLAVE = 7;
 		
 		
 		
