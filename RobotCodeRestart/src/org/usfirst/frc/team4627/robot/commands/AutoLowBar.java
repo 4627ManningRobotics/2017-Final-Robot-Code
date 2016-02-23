@@ -10,11 +10,16 @@ public class AutoLowBar extends Command {
     public AutoLowBar() {
     	// requires driveTrain
         requires(Robot.driveTrain);
+        requires(Robot.elChupaArms);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
     
+    	Robot.elChupaArms.motorPosition = 45;
+    	Robot.elChupaArms.setMotor();
+    	Timer.delay(1);
+    	
         // setsMotorspeed
         Robot.driveTrain.setLeftMotors(0.25);
         Robot.driveTrain.setRightMotors(-0.25);

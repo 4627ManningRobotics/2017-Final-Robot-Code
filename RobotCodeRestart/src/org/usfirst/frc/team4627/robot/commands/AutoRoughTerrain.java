@@ -12,15 +12,16 @@ public class AutoRoughTerrain extends Command {
 
     public AutoRoughTerrain() {
     	requires(Robot.driveTrain);
+    	requires(Robot.elChupaArms);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
     
-    	Robot.elChupaArms.motorPosition = 1200;
+    	Robot.elChupaArms.motorPosition = 1500;
     	Robot.elChupaArms.setMotor();
-    	
     	Timer.delay(1);
+    	
     	Robot.driveTrain.setLeftMotors(0.6);
     	Robot.driveTrain.setRightMotors(-0.6);
     	Timer.delay(3);

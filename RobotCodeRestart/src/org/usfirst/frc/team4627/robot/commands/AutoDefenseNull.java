@@ -11,7 +11,6 @@ public class AutoDefenseNull extends Command {
 
     public AutoDefenseNull() {
         requires(Robot.driveTrain);
-        requires(Robot.elChupaArms);
     }
 
     // Called just before this Command runs the first time

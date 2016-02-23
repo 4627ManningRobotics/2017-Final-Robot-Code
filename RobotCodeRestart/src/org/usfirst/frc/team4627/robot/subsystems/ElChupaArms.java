@@ -15,17 +15,25 @@ public class ElChupaArms extends Subsystem {
 	//Declaring Arm motors
 	CANTalon leftMotor = new CANTalon(RobotMap.EL_CHUPAS_LEFT_MOTOR);
 	CANTalon rightMotor = new CANTalon(RobotMap.EL_CHUPAS_RIGHT_MOTOR);
-	CANTalon liftMotor = new CANTalon(RobotMap.EL_CHUPAS_LIFT_MOTOR);
+	CANTalon liftMotorMaster = new CANTalon(RobotMap.EL_CHUPAS_LIFT_MOTOR_MASTER);
+	CANTalon liftMotorSlave = new CANTalon(RobotMap.EL_CHUPAS_LIFT_MOTOR_SLAVE);
 	Solenoid kicker = new Solenoid(RobotMap.EL_CHUPAS_KICKER);
     
 	public int motorPosition = 0;
 	
+	
 	public void setUpEncoder() {
 		
-		liftMotor.changeControlMode(CANTalon.TalonControlMode.Position);
-		liftMotor.setFeedbackDevice(FeedbackDevice.QuadEncoder);
-		liftMotor.setPID(1.9, 0.0, 0.0);
-		liftMotor.enableControl();	
+		// set up master motor
+		liftMotorMaster.changeControlMode(CANTalon.TalonControlMode.Position);
+		liftMotorMaster.setFeedbackDevice(FeedbackDevice.QuadEncoder);
+		liftMotorMaster.setPID(1.9, 0.0, 0.0);
+		liftMotorMaster.enableControl();
+		
+		//Set up slave motor
+		liftMotorSlave.changeControlMode(CANTalon.TalonControlMode.Follower);
+		liftMotorSlave.set(liftMotorMaster.getDeviceID());
+		liftMotorSlave.reverseOutput(true);
 		
 	}
 	
@@ -44,20 +52,20 @@ public class ElChupaArms extends Subsystem {
     
     public double getEncoderValue() {
 
-    	return liftMotor.get();
+    	return liftMotorMaster.get();
     	
     }
     
     public void setMotor() {
     	
-    	liftMotor.set(motorPosition);
+    	liftMotorMaster.set(motorPosition);
     	
     }
     
     public void zeroMotorInPlace() {
 
     	motorPosition = 0;
-    	liftMotor.setPosition(0);
+    	liftMotorMaster.setPosition(0);
     
     }
     
@@ -65,7 +73,7 @@ public class ElChupaArms extends Subsystem {
     	
     	
     	motorPosition = 1800;
-    	liftMotor.setPosition(1800);
+    	liftMotorMaster.setPosition(1800);
     	
     }
 	

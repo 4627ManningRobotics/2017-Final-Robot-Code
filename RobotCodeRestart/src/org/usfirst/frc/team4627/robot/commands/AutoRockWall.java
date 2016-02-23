@@ -12,15 +12,19 @@ public class AutoRockWall extends Command {
 
     public AutoRockWall() {
     	requires(Robot.driveTrain);
-    
+    	requires(Robot.elChupaArms);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
   
+    	Robot.elChupaArms.motorPosition = 1500;
+    	Robot.elChupaArms.setMotor();
+    	Timer.delay(1);
+    	
     	Robot.driveTrain.setLeftMotors(0.8);	
     	Robot.driveTrain.setRightMotors(-0.8);
-    	Timer.delay(4);
+    	Timer.delay(3);
     	
     	System.out.println("AutoRockWall is executing");
 

@@ -1,5 +1,7 @@
 package org.usfirst.frc.team4627.robot.commands;
 import org.usfirst.frc.team4627.robot.Robot;
+
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -8,6 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class AutoTeeterTotters extends Command {
 
     public AutoTeeterTotters() {
+    	requires(Robot.elChupaArms);
     	requires(Robot.driveTrain);
     }
 
@@ -19,6 +22,22 @@ public class AutoTeeterTotters extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	
+    	Robot.elChupaArms.motorPosition = 1000;
+    	Robot.elChupaArms.setMotor();
+    	Timer.delay(1);
+    	
+    	Robot.driveTrain.setLeftMotors(0.45);
+    	Robot.driveTrain.setRightMotors(0.45);
+    	Timer.delay(1.25);
+    	
+    	Robot.elChupaArms.motorPosition = 100;
+    	Robot.elChupaArms.setMotor();
+    	Timer.delay(1);
+    	
+    	Robot.driveTrain.setLeftMotors(0.6);
+    	Robot.driveTrain.setRightMotors(0.6);
+    	Timer.delay(2);
     	
     	System.out.println("AutoTeeterTotters is executing");
     	

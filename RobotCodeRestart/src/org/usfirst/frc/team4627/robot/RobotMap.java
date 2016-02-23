@@ -62,13 +62,14 @@ public class RobotMap {
 		//El Chupa values
 		public static final int EL_CHUPAS_LEFT_MOTOR = 4;
 		public static final int EL_CHUPAS_RIGHT_MOTOR = 5;
-		public static final int EL_CHUPAS_LIFT_MOTOR = 6;
 		public static final double EL_CHUPA_SHOOT_SCALING = 0.99;
 		public static final double EL_CHUPA_FIRING_SPEED = 0.9;
 		public static final int EL_CHUPAS_KICKER = 1;
 		public static final int EL_CHUPAS_MAX_LIFT = 1800;
 		public static final int EL_CHUPAS_MIN_LIFT = -1000;
 		
+		public static final int EL_CHUPAS_LIFT_MOTOR_MASTER = 6;
+		public static final int EL_CHUPAS_LIFT_MOTOR_SLAVE = 8;
 		
 		
 		

@@ -8,21 +8,24 @@ public class AutoMoat extends Command {
 // requires driveTrain
     public AutoMoat() {
     	requires(Robot.driveTrain);
+    	requires(Robot.elChupaArms);
     }
     // Called just before this Command runs the first time
     protected void initialize() {
     	
-    Robot.elChupaArms.motorPosition = 1200;
+    Robot.elChupaArms.motorPosition = 1500;
     Robot.elChupaArms.setMotor();	
     Timer.delay(1);
    
     Robot.driveTrain.setLeftMotors(0.7);
     Robot.driveTrain.setRightMotors(-0.7);
-    Timer.delay(4);
+    Timer.delay(2.5);
     
- Robot.driveTrain.setLeftMotors(0.5);
+    /*Robot.driveTrain.setLeftMotors(0.5);
     Robot.driveTrain.setRightMotors(0.5);
-    Timer.delay(2);   
+    Timer.delay(2);   */
+    
+    
 // Notification for us
     System.out.println("AutoMoat is executing");
     }
