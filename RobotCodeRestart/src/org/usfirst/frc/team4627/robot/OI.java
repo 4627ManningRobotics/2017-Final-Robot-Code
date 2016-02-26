@@ -19,7 +19,7 @@ public class OI {
     
 	// Declaring Joysticks
 	Joystick driver = new Joystick(RobotMap.DRIVER_JOYSTICK);
-	Joystick operator = new Joystick(RobotMap.OPERATOR_JOYSTICK)
+	Joystick operator = new Joystick(RobotMap.OPERATOR_JOYSTICK);
 	
 	//Declaring Buttons
 	Button a = new JoystickButton(driver, RobotMap.BUTTON_A);
