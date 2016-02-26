@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import org.usfirst.frc.team4627.robot.commands.AutoTargeting;
 import org.usfirst.frc.team4627.robot.commands.ChupasAngleCloseShot;
+import org.usfirst.frc.team4627.robot.commands.ChupasGoDown;
 import org.usfirst.frc.team4627.robot.commands.ResetChupasEncoder;
 import org.usfirst.frc.team4627.robot.commands.ShiftHigh;
 import org.usfirst.frc.team4627.robot.commands.ShiftLow;
@@ -18,7 +19,7 @@ public class OI {
     
 	// Declaring Joysticks
 	Joystick driver = new Joystick(RobotMap.DRIVER_JOYSTICK);
-	Joystick operator = new Joystick(RobotMap.OPERATOR_JOYSTICK);
+	Joystick operator = new Joystick(RobotMap.OPERATOR_JOYSTICK)
 	
 	//Declaring Buttons
 	Button a = new JoystickButton(driver, RobotMap.BUTTON_A);
@@ -27,7 +28,9 @@ public class OI {
 	Button x = new JoystickButton(operator, RobotMap.BUTTON_X);
 	Button back = new JoystickButton(operator, RobotMap.BUTTON_BACK);
 	Button y = new JoystickButton(operator, RobotMap.BUTTON_Y);
-
+	Button opA = new JoystickButton(operator, RobotMap.BUTTON_A);
+	
+	
 	//Sets commands to run when buttons are pressed
 		public OI () {
 			
@@ -39,7 +42,7 @@ public class OI {
 			x.whenPressed(new Shoot());
 			back.whenPressed(new ResetChupasEncoder());
 			y.whenPressed(new ChupasAngleCloseShot());
-			
+			opA.whenPressed(new ChupasGoDown());
 				
 		}
 		

@@ -16,7 +16,7 @@ public class ChupasAngleCloseShot extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	
-    	Robot.elChupaArms.motorPosition = 1180;
+    	Robot.elChupaArms.motorPosition = 1280;
     	Robot.elChupaArms.setMotor();
     	
     }
