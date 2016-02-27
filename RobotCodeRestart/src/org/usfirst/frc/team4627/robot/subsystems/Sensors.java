@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Sensors extends Subsystem {
 
-	public double drewTheBetrayer;
+	public double thisIsAVariable;
 	public double targetDiff;
 	
 	
