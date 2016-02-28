@@ -27,7 +27,7 @@ public class ElChupaArms extends Subsystem {
 		// set up master motor
 		liftMotorMaster.changeControlMode(CANTalon.TalonControlMode.Position);
 		liftMotorMaster.setFeedbackDevice(FeedbackDevice.QuadEncoder);
-		liftMotorMaster.setPID(1.9, 0.0, 0.0);
+		liftMotorMaster.setPID(2.8, 0.0, 0.0);
 		liftMotorMaster.enableControl();
 		
 		//Set up slave motor

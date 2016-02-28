@@ -4,8 +4,11 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import org.usfirst.frc.team4627.robot.commands.AutoTargeting;
+import org.usfirst.frc.team4627.robot.commands.AutoTargetingShoot;
 import org.usfirst.frc.team4627.robot.commands.ChupasAngleCloseShot;
 import org.usfirst.frc.team4627.robot.commands.ChupasGoDown;
+import org.usfirst.frc.team4627.robot.commands.DefenseShotAngleSet;
+import org.usfirst.frc.team4627.robot.commands.LowGoalAutomatic;
 import org.usfirst.frc.team4627.robot.commands.ResetChupasEncoder;
 import org.usfirst.frc.team4627.robot.commands.ShiftHigh;
 import org.usfirst.frc.team4627.robot.commands.ShiftLow;
@@ -29,6 +32,9 @@ public class OI {
 	Button back = new JoystickButton(operator, RobotMap.BUTTON_BACK);
 	Button y = new JoystickButton(operator, RobotMap.BUTTON_Y);
 	Button opA = new JoystickButton(operator, RobotMap.BUTTON_A);
+	Button opB = new JoystickButton(operator, RobotMap.BUTTON_B);
+	Button rightShoulder = new JoystickButton(operator, RobotMap.BUTTON_RIGHT_BUMPER);
+	Button leftShoulder = new JoystickButton(operator, RobotMap.BUTTON_LEFT_BUMPER);
 	
 	
 	//Sets commands to run when buttons are pressed
@@ -43,7 +49,9 @@ public class OI {
 			back.whenPressed(new ResetChupasEncoder());
 			y.whenPressed(new ChupasAngleCloseShot());
 			opA.whenPressed(new ChupasGoDown());
-				
+			opB.whenPressed(new LowGoalAutomatic());
+			rightShoulder.whenPressed(new AutoTargetingShoot());
+			leftShoulder.whenPressed(new DefenseShotAngleSet());
 		}
 		
 	//Method for getting an axis value on the driver joystick
