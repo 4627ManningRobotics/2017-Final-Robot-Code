@@ -3,6 +3,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
+import org.usfirst.frc.team4627.robot.commands.ArmsFullyBack;
 import org.usfirst.frc.team4627.robot.commands.AutoTargeting;
 import org.usfirst.frc.team4627.robot.commands.AutoTargetingShoot;
 import org.usfirst.frc.team4627.robot.commands.ChupasAngleCloseShot;
@@ -24,34 +25,35 @@ public class OI {
 	Joystick driver = new Joystick(RobotMap.DRIVER_JOYSTICK);
 	Joystick operator = new Joystick(RobotMap.OPERATOR_JOYSTICK);
 	
-	//Declaring Buttons
-	Button a = new JoystickButton(driver, RobotMap.BUTTON_A);
-	Button b = new JoystickButton(driver, RobotMap.BUTTON_B);
-	Button start = new JoystickButton(operator, RobotMap.BUTTON_START);
-	Button x = new JoystickButton(operator, RobotMap.BUTTON_X);
-	Button back = new JoystickButton(operator, RobotMap.BUTTON_BACK);
-	Button y = new JoystickButton(operator, RobotMap.BUTTON_Y);
+	//Declaring driver buttons
+	Button driveA = new JoystickButton(driver, RobotMap.BUTTON_A);
+	Button driveB = new JoystickButton(driver, RobotMap.BUTTON_B);
+	
+	//Declaring operator buttons
+	Button opStart = new JoystickButton(operator, RobotMap.BUTTON_START);
+	Button opX = new JoystickButton(operator, RobotMap.BUTTON_X);
+	Button opBack = new JoystickButton(operator, RobotMap.BUTTON_BACK);
+	Button opY = new JoystickButton(operator, RobotMap.BUTTON_Y);
 	Button opA = new JoystickButton(operator, RobotMap.BUTTON_A);
 	Button opB = new JoystickButton(operator, RobotMap.BUTTON_B);
-	Button rightShoulder = new JoystickButton(operator, RobotMap.BUTTON_RIGHT_BUMPER);
-	Button leftShoulder = new JoystickButton(operator, RobotMap.BUTTON_LEFT_BUMPER);
+	Button oprightShoulder = new JoystickButton(operator, RobotMap.BUTTON_RIGHT_BUMPER);
+	Button opleftShoulder = new JoystickButton(operator, RobotMap.BUTTON_LEFT_BUMPER);
 	
 	
 	//Sets commands to run when buttons are pressed
 		public OI () {
 			
-			a.whenPressed(new ShiftHigh());
-			b.whenPressed(new ShiftLow());
-			
-			
-			//start.whenPressed(new AutoTargeting());
-			x.whenPressed(new Shoot());
-			back.whenPressed(new ResetChupasEncoder());
-			y.whenPressed(new ChupasAngleCloseShot());
+			driveA.whenPressed(new ShiftHigh());
+			driveB.whenPressed(new ShiftLow());
+			opX.whenPressed(new Shoot());
+			opBack.whenPressed(new ResetChupasEncoder());
+			opY.whenPressed(new ChupasAngleCloseShot());
 			opA.whenPressed(new ChupasGoDown());
 			opB.whenPressed(new LowGoalAutomatic());
-			rightShoulder.whenPressed(new AutoTargetingShoot());
-			leftShoulder.whenPressed(new DefenseShotAngleSet());
+			oprightShoulder.whenPressed(new AutoTargetingShoot());
+			opleftShoulder.whenPressed(new DefenseShotAngleSet());
+			opStart.whenPressed(new ArmsFullyBack());
+	
 		}
 		
 	//Method for getting an axis value on the driver joystick

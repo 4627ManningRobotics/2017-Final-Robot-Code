@@ -7,20 +7,21 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class LowGoalAutomatic extends Command {
+public class ArmsFullyBack extends Command {
 
-    public LowGoalAutomatic() {
+    public ArmsFullyBack() {
         requires(Robot.elChupaArms);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	
+    	Robot.elChupaArms.setMotorAutoStart();
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.elChupaArms.motorPosition = 300;
-    	Robot.elChupaArms.setMotor();
     }
 
     // Make this return true when this Command no longer needs to run execute()

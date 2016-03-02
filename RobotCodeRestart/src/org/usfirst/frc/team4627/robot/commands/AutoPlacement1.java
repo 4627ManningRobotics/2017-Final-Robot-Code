@@ -20,9 +20,9 @@ public class AutoPlacement1 extends Command {
    	
    	
     	// Sets the direction of the robot
-    	 Robot.driveTrain.setLeftMotors(0.15);
-         Robot.driveTrain.setRightMotors(0.15);
-         Timer.delay(2);
+    	 Robot.driveTrain.setLeftMotors(0.75);
+         Robot.driveTrain.setRightMotors(0.75);
+         Timer.delay(0.75);
          //Robot.driveTrain.setLeftMotors(0.5);
          //Robot.driveTrain.setRightMotors(-0.5);
          //Timer.delay(1);
