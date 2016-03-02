@@ -18,8 +18,8 @@ public class DefenseShotAngleSet extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     
-    Robot.elChupaArms.motorPosition = RobotMap.DEFENSE_SHOT_ANGLE;
-    Robot.elChupaArms.setMotor();
+        Robot.elChupaArms.motorPosition = RobotMap.DEFENSE_SHOT_ANGLE;
+        Robot.elChupaArms.setMotor();
     
     }
 

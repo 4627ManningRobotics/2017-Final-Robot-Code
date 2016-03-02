@@ -31,7 +31,7 @@ public class AutoTeeterTotters extends Command {
     	Robot.driveTrain.setRightMotors(0.45);
     	Timer.delay(1.25);
     	
-    	Robot.elChupaArms.motorPosition = 100;
+    	Robot.elChupaArms.motorPosition = 75;
     	Robot.elChupaArms.setMotor();
     	Timer.delay(1);
     	

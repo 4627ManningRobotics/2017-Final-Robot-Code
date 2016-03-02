@@ -1,5 +1,7 @@
 package org.usfirst.frc.team4627.robot.commands;
 import org.usfirst.frc.team4627.robot.Robot;
+import org.usfirst.frc.team4627.robot.RobotMap;
+
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -11,6 +13,7 @@ public class AutoPlacement2 extends Command {
 
     public AutoPlacement2() {
         requires(Robot.driveTrain);
+        requires(Robot.elChupaArms);
     }
 
     // Called just before this Command runs the first time
@@ -22,8 +25,11 @@ public class AutoPlacement2 extends Command {
     	Robot.driveTrain.setLeftMotors(0);
     	Robot.driveTrain.setRightMotors(0);
     	System.out.println("Placement 2 is working");
+    	
+    	Robot.elChupaArms.motorPosition = RobotMap.DEFENSE_SHOT_ANGLE;
+        Robot.elChupaArms.setMotor();
 
-        Scheduler.getInstance().add( new AutoTargeting());
+        Scheduler.getInstance().add( new AutoTargetingShoot());
 
     }
 

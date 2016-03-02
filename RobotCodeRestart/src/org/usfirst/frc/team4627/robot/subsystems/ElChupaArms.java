@@ -72,8 +72,8 @@ public class ElChupaArms extends Subsystem {
     public void setMotorAutoStart() {
     	
     	
-    	motorPosition = 1800;
-    	liftMotorMaster.setPosition(1800);
+    	motorPosition = 2436;
+    	liftMotorMaster.setPosition(2436);
     	
     }
 	
