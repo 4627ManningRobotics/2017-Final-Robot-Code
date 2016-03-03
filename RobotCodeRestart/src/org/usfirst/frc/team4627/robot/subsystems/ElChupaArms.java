@@ -21,6 +21,7 @@ public class ElChupaArms extends Subsystem {
     
 	public int motorPosition = 0;
 	
+	public double waitTime = 0;
 	
 	public void setUpEncoder() {
 		
@@ -77,10 +78,13 @@ public class ElChupaArms extends Subsystem {
     	
     }
 	
+
 	public void initDefaultCommand() {
 	
     	setDefaultCommand(new ElChupasControl());
     	
     }
+	
+
 }
 

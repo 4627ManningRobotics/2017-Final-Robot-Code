@@ -55,6 +55,8 @@ import org.usfirst.frc.team4627.robot.subsystems.Sensors;
 
 public class Robot extends IterativeRobot {
 	
+	public static double waitTime = 0;
+	
 	
 	// Declaring variables for retrieving values from GRIP
 	public static double centerY;
@@ -85,6 +87,7 @@ public class Robot extends IterativeRobot {
 	SendableChooser autonomousPlacement;
 
 	public void robotInit() {
+		
 
 		Robot.elChupaArms.setUpEncoder();
 		

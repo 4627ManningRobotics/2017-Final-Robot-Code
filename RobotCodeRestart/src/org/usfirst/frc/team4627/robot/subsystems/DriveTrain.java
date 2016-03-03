@@ -28,6 +28,8 @@ public class DriveTrain extends Subsystem {
     	Solenoid gearShifter = new Solenoid(RobotMap.GEAR_SHIFTER);
 
     	
+
+  
     	
     	public void shiftGear(boolean gear) {
     		
@@ -48,10 +50,10 @@ public class DriveTrain extends Subsystem {
     		topRightMotor.set(speed);
     		bottomRightMotor.set(speed);
     	}
-    			
-    			
     	
-    public void initDefaultCommand() {
+
+
+	public void initDefaultCommand() {
         
     	setDefaultCommand(new StartupDrive());
     	

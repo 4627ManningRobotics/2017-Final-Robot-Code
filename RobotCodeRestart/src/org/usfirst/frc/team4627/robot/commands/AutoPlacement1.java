@@ -1,63 +1,59 @@
 package org.usfirst.frc.team4627.robot.commands;
-import org.usfirst.frc.team4627.robot.Robot;
-import org.usfirst.frc.team4627.robot.RobotMap;
 
-import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.Scheduler;
-public class AutoPlacement1 extends Command {
-    public AutoPlacement1() {
-        // requires driveTrain
-    	requires(Robot.driveTrain);
-    	requires(Robot.elChupaArms);
-    }
-   
+import edu.wpi.first.wpilibj.command.CommandGroup;
+
+/**
+ *
+ */
+public class AutoPlacement1 extends CommandGroup {
     
-    // Called just before this Command runs the first time
-    protected void initialize() {
-        
-   	System.out.println("Placement 1 is working");
-   	
-   	
-    	// Sets the direction of the robot
-    	 Robot.driveTrain.setLeftMotors(0.75);
-         Robot.driveTrain.setRightMotors(0.75);
-         Timer.delay(0.75);
-         //Robot.driveTrain.setLeftMotors(0.5);
-         //Robot.driveTrain.setRightMotors(-0.5);
-         //Timer.delay(1);
-         
-         Robot.driveTrain.setLeftMotors(0);
-         Robot.driveTrain.setRightMotors(0);
-         
-         Robot.elChupaArms.motorPosition = RobotMap.DEFENSE_SHOT_ANGLE;
-         Robot.elChupaArms.setMotor();
-         
-         Timer.delay(2);
-         
-         Scheduler.getInstance().add(new AutoTargetingShoot());
-         
-      //   Scheduler.getInstance().add(new AutoTargeting());
-      
+    public  AutoPlacement1() {
+        // Add Commands here:
+        // e.g. addSequential(new Command1());
+        //      addSequential(new Command2());
+        // these will run in order.
 
-    
-    }
+        // To run multiple commands at the same time,
+        // use addParallel()
+        // e.g. addParallel(new Command1());
+        //      addSequential(new Command2());
+        // Command1 and Command2 will run in parallel.
 
-    // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
-    }
-
-    // Make this return true when this Command no longer needs to run execute()
-    protected boolean isFinished() {
-        return true;
-    }
-
-    // Called once after isFinished returns true
-    protected void end() {
-    }
-
-    // Called when another command which requires one or more of the same
-    // subsystems is scheduled to run
-    protected void interrupted() {
+        // A command group will require all of the subsystems that each member
+        // would require.
+        // e.g. if Command1 requires chassis, and Command2 requires arm,
+        // a CommandGroup containing them would require both the chassis and the
+        // arm.
+    	
+    	
+    	
+        /*
+         * Pseudo-code for Placement One
+         * 
+         * Set to 0.75 speed
+         * 
+         * wait 0.75
+         * 
+         * Zero motors
+         * 
+         * Set Chupas motor position to defense shot angle in RobotMap
+         * set the Chupas motor
+         * 
+         * wait 2 seconds
+         * schedule AutoTargeting
+         * 
+         */
+    	
+    	
+    	
+    	
+    	
+    	addSequential(new AutoPlacement1_Base1());
+    	addSequential(new Wait());
+    	addSequential(new StopDriveMotors());
+    	addSequential(new DefenseShotAngleSet());
+    	addSequential(new AutoTargetingShoot());
+    	
+    	
     }
 }
