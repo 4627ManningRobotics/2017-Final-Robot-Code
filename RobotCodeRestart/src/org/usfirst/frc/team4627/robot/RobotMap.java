@@ -87,7 +87,7 @@ public class RobotMap {
 		
 		public static final int EL_CHUPAS_LIFT_MOTOR_MASTER = 2;
 		public static final int EL_CHUPAS_LIFT_MOTOR_SLAVE = 3;
-		public static final int EL_CHUPAS_CLOSE_SHOT_ANGLE = 1300;
+		public static final int EL_CHUPAS_CLOSE_SHOT_ANGLE = 1000;
 		public static final int DEFENSE_SHOT_ANGLE = 1000;
 		
 		
