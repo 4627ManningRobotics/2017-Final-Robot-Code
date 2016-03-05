@@ -91,7 +91,7 @@ public class Robot extends IterativeRobot {
 		
 		CameraServer server = CameraServer.getInstance();
 		server.setQuality(50);
-		server.startAutomaticCapture("cam1");	
+		server.startAutomaticCapture("cam0");	
 
 		Robot.elChupaArms.setUpEncoder();
 		
