@@ -32,7 +32,7 @@ public class AutoPlacement5 extends Command {
         Robot.elChupaArms.setMotor();
         Timer.delay(1);
     	
-        Scheduler.getInstance().add( new AutoTargetingShoot());
+        Scheduler.getInstance().add( new TheAligner());
    
     	System.out.println("Placement 5 is working");
 

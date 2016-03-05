@@ -8,8 +8,10 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class Wait extends Command {
+	double m_time;
 
-    public Wait() {
+    public Wait(double time) {
+    	m_time = time;
     }
 
     // Called just before this Command runs the first time
@@ -19,7 +21,7 @@ public class Wait extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	
-    	setTimeout(Robot.waitTime);
+    	setTimeout(m_time);
     	
     }
 

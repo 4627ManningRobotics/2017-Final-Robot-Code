@@ -28,7 +28,7 @@ public class AutoPlacement4 extends Command {
         Robot.elChupaArms.setMotor();
         Timer.delay(1);
     	
-        Scheduler.getInstance().add( new AutoTargetingShoot());
+        Scheduler.getInstance().add( new TheAligner());
 
     	
     }

@@ -33,7 +33,7 @@ public class AutoPlacement3 extends Command {
     	Robot.driveTrain.setLeftMotors(0);
     	Robot.driveTrain.setRightMotors(0);
     	
-        Scheduler.getInstance().add( new AutoTargetingShoot());
+        Scheduler.getInstance().add( new TheAligner());
 
     }
 

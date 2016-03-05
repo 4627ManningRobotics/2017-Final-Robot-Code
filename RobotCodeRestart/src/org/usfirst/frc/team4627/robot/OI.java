@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import org.usfirst.frc.team4627.robot.commands.ArmsFullyBack;
 import org.usfirst.frc.team4627.robot.commands.AutoTargeting;
-import org.usfirst.frc.team4627.robot.commands.AutoTargetingShoot;
+import org.usfirst.frc.team4627.robot.commands.TheAligner;
 import org.usfirst.frc.team4627.robot.commands.ChupasAngleCloseShot;
 import org.usfirst.frc.team4627.robot.commands.ChupasGoDown;
 import org.usfirst.frc.team4627.robot.commands.DefenseShotAngleSet;
@@ -14,6 +14,7 @@ import org.usfirst.frc.team4627.robot.commands.ResetChupasEncoder;
 import org.usfirst.frc.team4627.robot.commands.ShiftHigh;
 import org.usfirst.frc.team4627.robot.commands.ShiftLow;
 import org.usfirst.frc.team4627.robot.commands.Shoot;
+import org.usfirst.frc.team4627.robot.commands.TheAligner;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -50,7 +51,7 @@ public class OI {
 			opY.whenPressed(new ChupasAngleCloseShot());
 			opA.whenPressed(new ChupasGoDown());
 			opB.whenPressed(new LowGoalAutomatic());
-			oprightShoulder.whenPressed(new AutoTargetingShoot());
+			oprightShoulder.whenPressed(new TheAligner());
 			opleftShoulder.whenPressed(new DefenseShotAngleSet());
 			opStart.whenPressed(new ArmsFullyBack());
 	

@@ -21,9 +21,9 @@ public class AutoLowBar extends Command {
     	Timer.delay(2);
     	
         // setsMotorspeed
-        Robot.driveTrain.setLeftMotors(0.25);
-        Robot.driveTrain.setRightMotors(-0.25);
-        Timer.delay(5);
+        Robot.driveTrain.setLeftMotors(0.4);
+        Robot.driveTrain.setRightMotors(-0.4);
+        Timer.delay(3);
         System.out.println("AutoLowBar is executing");
     }
     // Called repeatedly when this Command is scheduled to run
@@ -35,9 +35,14 @@ public class AutoLowBar extends Command {
     }
     // Called once after isFinished returns true
     protected void end() {	
+    	
+    	Robot.driveTrain.setLeftMotors(0);
+    	Robot.driveTrain.setRightMotors(0);
+    	
     	if(Robot.autonomousPlacementStart != null) {
     		Robot.autonomousPlacementStart.start();
     	}
+    	
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run

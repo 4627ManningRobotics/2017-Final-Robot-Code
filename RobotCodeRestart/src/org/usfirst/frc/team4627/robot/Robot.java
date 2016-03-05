@@ -14,7 +14,7 @@ import org.usfirst.frc.team4627.robot.commands.AutoDefenseNull;
 import org.usfirst.frc.team4627.robot.commands.AutoLowBar;
 import org.usfirst.frc.team4627.robot.commands.AutoMoat;
 import org.usfirst.frc.team4627.robot.commands.AutoPlacement1;
-import org.usfirst.frc.team4627.robot.commands.AutoPlacement2;
+import org.usfirst.frc.team4627.robot.commands.AutoPlacement2_Base1;
 import org.usfirst.frc.team4627.robot.commands.AutoPlacement3;
 import org.usfirst.frc.team4627.robot.commands.AutoPlacement4;
 import org.usfirst.frc.team4627.robot.commands.AutoPlacement5;
@@ -23,7 +23,8 @@ import org.usfirst.frc.team4627.robot.commands.AutoPortacolis;
 import org.usfirst.frc.team4627.robot.commands.AutoRamparts;
 import org.usfirst.frc.team4627.robot.commands.AutoRockWall;
 import org.usfirst.frc.team4627.robot.commands.AutoRoughTerrain;
-import org.usfirst.frc.team4627.robot.commands.AutoTargetingShoot;
+import org.usfirst.frc.team4627.robot.commands.AutoTurn;
+import org.usfirst.frc.team4627.robot.commands.TheAligner;
 import org.usfirst.frc.team4627.robot.commands.AutoTargetingX;
 import org.usfirst.frc.team4627.robot.commands.AutoTargetingY;
 import org.usfirst.frc.team4627.robot.commands.AutoTeeterTotters;
@@ -56,7 +57,6 @@ import org.usfirst.frc.team4627.robot.subsystems.Sensors;
 
 public class Robot extends IterativeRobot {
 	
-	public static double waitTime = 0;
 	
 	
 	// Declaring variables for retrieving values from GRIP
@@ -140,7 +140,7 @@ public class Robot extends IterativeRobot {
 		// Adding options to the SendableChooser instance variable,
 		// autonoumousDefense
 		autonomousPlacement.addDefault("Placement 1", new AutoPlacement1());
-		autonomousPlacement.addObject("Placement 2", new AutoPlacement2());
+		autonomousPlacement.addObject("Placement 2", new AutoPlacement2_Base1());
 		autonomousPlacement.addObject("Placement 3", new AutoPlacement3());
 		autonomousPlacement.addObject("Placement 4", new AutoPlacement4());
 		autonomousPlacement.addObject("Placement 5", new AutoPlacement5());
@@ -166,7 +166,9 @@ public class Robot extends IterativeRobot {
 
 		SmartDashboard.putData("AutoTarget X", new AutoTargetingX());
 		SmartDashboard.putData("AutoTarget Y", new AutoTargetingY());
-		SmartDashboard.putData("AutoTarget Shoot", new AutoTargetingShoot());
+		SmartDashboard.putData("AutoTarget Shoot", new TheAligner());
+		SmartDashboard.putData("Placement One", new AutoPlacement1());
+		SmartDashboard.putData("Test Gyro 45", new AutoTurn(45));
 	}
 
 	public void disabledPeriodic() {
@@ -252,11 +254,14 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
     	
+    	
+    	
+    	SmartDashboard.putNumber("Talon 3 Current", elChupaArms.getSlaveCurrent());
     	//Print out encoder values
     	//System.out.println(Robot.elChupaArms.getEncoderValue());
     	
     	//Print gyroscope values
-    	//System.out.println(Robot.sensors.getGyroAngle());
+    	System.out.println(Robot.sensors.getGyroAngle());
     	
     	//Sets array variables for retrieving values in GRIP
     	double[] yValue = new double[0];

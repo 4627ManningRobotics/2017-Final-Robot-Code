@@ -3,6 +3,7 @@ package org.usfirst.frc.team4627.robot.commands;
 import org.usfirst.frc.team4627.robot.Robot;
 import org.usfirst.frc.team4627.robot.RobotMap;
 
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -22,6 +23,8 @@ public class ElChupasControl extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     
+    	
+    if(DriverStation.getInstance().isOperatorControl() == true) {
     double leftTrigger = Robot.oi.operatorAxisValue(RobotMap.LEFT_TRIGGER);
     double rightTrigger = Robot.oi.operatorAxisValue(RobotMap.RIGHT_TRIGGER);
     
@@ -48,7 +51,7 @@ public class ElChupasControl extends Command {
    
     Robot.elChupaArms.setMotor();
     
-    
+    }
     
     }
 

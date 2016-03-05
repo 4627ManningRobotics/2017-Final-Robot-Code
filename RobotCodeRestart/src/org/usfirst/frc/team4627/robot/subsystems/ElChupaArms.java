@@ -73,11 +73,36 @@ public class ElChupaArms extends Subsystem {
     public void setMotorAutoStart() {
     	
     	
-    	motorPosition = 2436;
-    	liftMotorMaster.setPosition(2436);
+    	motorPosition = RobotMap.EL_CHUPAS_MAX_POSITION;
+    	liftMotorMaster.setPosition(RobotMap.EL_CHUPAS_MAX_POSITION);
+    	
+    }
+    
+    public double getSlaveCurrent() {
+    	
+    	return liftMotorSlave.getOutputCurrent();
     	
     }
 	
+    public void overcurrentCheck() {
+    	
+    	if(motorPosition > liftMotorSlave.getEncPosition() && liftMotorSlave.getOutputCurrent() >= 20.00) {
+    		
+    		motorPosition = RobotMap.EL_CHUPAS_MAX_POSITION;
+        	liftMotorMaster.setPosition(RobotMap.EL_CHUPAS_MAX_POSITION);
+
+    		
+    	}
+    	if(motorPosition < liftMotorSlave.getEncPosition() && liftMotorSlave.getOutputCurrent() >= 20.00) {
+    		
+    		motorPosition = 0;
+        	liftMotorMaster.setPosition(0);
+
+    		
+    	}
+    	
+    	
+    }
 
 	public void initDefaultCommand() {
 	
