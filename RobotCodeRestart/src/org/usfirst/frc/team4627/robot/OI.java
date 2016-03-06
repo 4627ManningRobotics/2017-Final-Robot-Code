@@ -44,6 +44,32 @@ public class OI {
 	//Sets commands to run when buttons are pressed
 		public OI () {
 			
+			
+			/*
+			 * Driver a -----> Shifts into high gear
+			 * Driver b -----> Shifts into low gear
+			 * 
+			 * Driver right trigger -----> Drives forward
+			 * Driver left trigger -----> Drives backwards
+			 * 
+			 * 
+			 * Operator a -----> Sets the Chupas to go down to the ground level
+			 * Operator b -----> Currently an empty command, but will be the low goal automatic
+			 * Operator x -----> Fires the kicker
+			 * Operator y -----> Sets the Chupas to an angle for close shooting
+			 * 
+			 * Operator back -----> Resets the encoder on the lift motors for the Chupas
+			 * Operator start -----> Brings the chupas fully back (ex. for going over defenses)
+			 * 
+			 * Operator right bumper -----> Turns on the Chupa motors shoots the kicker then stops the Chupa motors
+			 * Operator left bumper -----> Sets the angle to the desired angle from the defenses
+			 * 
+			 * Operator right trigger -----> Intakes the ball
+			 * Operator left trigger -----> Outtakes/shoots the ball
+			 
+			 * 
+			 * */
+			
 			driveA.whenPressed(new ShiftHigh());
 			driveB.whenPressed(new ShiftLow());
 			opX.whenPressed(new Shoot());

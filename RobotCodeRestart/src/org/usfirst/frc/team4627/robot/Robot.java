@@ -14,7 +14,7 @@ import org.usfirst.frc.team4627.robot.commands.AutoDefenseNull;
 import org.usfirst.frc.team4627.robot.commands.AutoLowBar;
 import org.usfirst.frc.team4627.robot.commands.AutoMoat;
 import org.usfirst.frc.team4627.robot.commands.AutoPlacement1;
-import org.usfirst.frc.team4627.robot.commands.AutoPlacement2_Base1;
+import org.usfirst.frc.team4627.robot.commands.AutoPlacement2;
 import org.usfirst.frc.team4627.robot.commands.AutoPlacement3;
 import org.usfirst.frc.team4627.robot.commands.AutoPlacement4;
 import org.usfirst.frc.team4627.robot.commands.AutoPlacement5;
@@ -89,9 +89,9 @@ public class Robot extends IterativeRobot {
 
 	public void robotInit() {
 		
-		CameraServer server = CameraServer.getInstance();
-		server.setQuality(50);
-		server.startAutomaticCapture("cam0");	
+		//CameraServer server = CameraServer.getInstance();
+		//server.setQuality(50);
+		//server.startAutomaticCapture("cam0");	
 
 		Robot.elChupaArms.setUpEncoder();
 		
@@ -140,7 +140,7 @@ public class Robot extends IterativeRobot {
 		// Adding options to the SendableChooser instance variable,
 		// autonoumousDefense
 		autonomousPlacement.addDefault("Placement 1", new AutoPlacement1());
-		autonomousPlacement.addObject("Placement 2", new AutoPlacement2_Base1());
+		autonomousPlacement.addObject("Placement 2", new AutoPlacement2());
 		autonomousPlacement.addObject("Placement 3", new AutoPlacement3());
 		autonomousPlacement.addObject("Placement 4", new AutoPlacement4());
 		autonomousPlacement.addObject("Placement 5", new AutoPlacement5());
@@ -157,12 +157,6 @@ public class Robot extends IterativeRobot {
 		
 		//Showing the command on the subsystem ElChupaArms
 		SmartDashboard.putData(elChupaArms);
-		
-		//Showing the value of centerY on the smart dashboard
-		SmartDashboard.putNumber("The value of centerY is ", Robot.centerY);
-		
-		//Showing the value of centerX on the smart dashboard
-		SmartDashboard.putNumber("The value of centerX is ", Robot.centerX);
 
 		SmartDashboard.putData("AutoTarget X", new AutoTargetingX());
 		SmartDashboard.putData("AutoTarget Y", new AutoTargetingY());
@@ -200,36 +194,10 @@ public class Robot extends IterativeRobot {
      */
     public void autonomousPeriodic() {
         
-    	
-    	
-    	
-    	//Declaring arrays of doubles to be used when retrieving data from GRIP during autonomous
-    	double[] yValue = new double[0];
-    	double[] xValue = new double[0];
-    	
-    	//Getting the array values for centerY (The center of the contour in grip from top to bottom)
-    	double[] dataArrayY = GRIPDataTable.getNumberArray("centerY", yValue);
-    	
-    	//Getting a single double value from the array of centerY
-    	for (int i = 0; i < dataArrayY.length; i++){
-        	
-    		centerY = dataArrayY[i];
-    	
-    	}
-    	
-    	//Getting the array values for centerX (The center of the contour in grip from left to right)
-    	double[] dataArrayX = GRIPDataTable.getNumberArray("centerX", xValue);
-    	
-    	//Getting a single double value from the array of centerX
-    	for (int i = 0; i < dataArrayX.length; i++){
-        	
-    		centerX = dataArrayX[i];
-    	
-    	}
-    	
+    	getGRIPData();
+
     	//Default code, do not delete
     	Scheduler.getInstance().run();
-
     }
 
     public void teleopInit() {
@@ -263,38 +231,11 @@ public class Robot extends IterativeRobot {
     	//Print gyroscope values
     	System.out.println(Robot.sensors.getGyroAngle());
     	
-    	//Sets array variables for retrieving values in GRIP
-    	double[] yValue = new double[0];
-    	double[] xValue = new double[0];
+    	getGRIPData();
     	
-    	//Gets centerY values from GRIP
-    	double[] dataArrayY = GRIPDataTable.getNumberArray("centerY", yValue);
     	
-    	//Sets the array value as a single value
-    	for (int i = 0; i < dataArrayY.length; i++){
-        	centerY = dataArrayY[i];
-    	}
     	
-    	//Gets centerX values from GRIP
-    	double[] dataArrayX = GRIPDataTable.getNumberArray("centerX", xValue);
-    	  
-    	//Sets the array value as a single value
-    	for (int i = 0; i < dataArrayX.length; i++){
-        	
-    		centerX = dataArrayX[i];
     	
-    	}
-    	
-    	//Sets a variable for the smart dashboard air pressure value
-    	int robotPressure;
-		
-		// Sets the value for the smart dashboard air pressure value (Currently
-		// set at 5 for testing, to be modified once we have the hardware for
-		// testing pressure)
-		robotPressure = 5;
-
-		// Puts the robotPressure variable on the smart dashboard
-		SmartDashboard.putString("Air Pressure:", robotPressure + " PSI");
 		SmartDashboard.putNumber("Chupas Position", elChupaArms.getEncoderValue());
 
 		// Default code, do not delete
@@ -302,6 +243,46 @@ public class Robot extends IterativeRobot {
 
 	}
 
+    public void getGRIPData() {
+    	
+    	//Declaring arrays of doubles to be used when retrieving data from GRIP during autonomous
+    	double[] yValue = new double[0];
+    	double[] xValue = new double[0];
+    	double[] widthValue = new double[0];
+    	
+    	int widthPos = 0;
+    	//Getting the array values for centerY (The center of the contour in grip from top to bottom)
+    	double[] dataArrayY = GRIPDataTable.getNumberArray("centerY", yValue);
+    	//Getting the array values for centerX (The center of the contour in grip from left to right)
+    	double[] dataArrayX = GRIPDataTable.getNumberArray("centerX", xValue);
+    	//Getting the array values for width (The center of the contour in grip from left to right)
+    	double[] dataArrayWidth = GRIPDataTable.getNumberArray("width", widthValue);
+    	
+    	for(int i = 0; i < dataArrayWidth.length; i++){
+    		
+    		if(dataArrayWidth[i] > dataArrayWidth[widthPos]){
+    			
+    			widthPos = i;
+    			
+    		}
+    		
+    	}
+    	//Getting a single double value from the array of centerY
+        if (dataArrayY.length > 0) {	
+    		centerY = dataArrayY[widthPos];
+        }
+    	//Getting a single double value from the array of centerX
+        if (dataArrayX.length > 0){
+    		centerX = dataArrayX[widthPos];
+        }
+    		
+		//Showing the value of centerY on the smart dashboard
+		SmartDashboard.putNumber("The value of centerY is ", Robot.centerY);
+		
+		//Showing the value of centerX on the smart dashboard
+		SmartDashboard.putNumber("The value of centerX is ", Robot.centerX);
+    }
+    
 	/*
 	 * This function is called periodically during test mode
 	 */

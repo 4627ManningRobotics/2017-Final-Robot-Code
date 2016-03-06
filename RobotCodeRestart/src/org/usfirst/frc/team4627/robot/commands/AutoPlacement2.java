@@ -5,9 +5,9 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class AutoPlacement1 extends CommandGroup {
-   
-    public  AutoPlacement1() {
+public class AutoPlacement2 extends CommandGroup {
+    
+    public  AutoPlacement2() {
     	
     	addSequential(new Wait(1));
     	addSequential(new AutoTurn(41));

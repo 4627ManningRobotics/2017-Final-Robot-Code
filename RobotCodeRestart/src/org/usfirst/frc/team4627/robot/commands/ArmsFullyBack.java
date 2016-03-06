@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4627.robot.commands;
 
 import org.usfirst.frc.team4627.robot.Robot;
+import org.usfirst.frc.team4627.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -16,7 +17,8 @@ public class ArmsFullyBack extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	
-    	Robot.elChupaArms.setMotorAutoStart();
+    	Robot.elChupaArms.motorPosition = RobotMap.EL_CHUPAS_MAX_POSITION;
+    	Robot.elChupaArms.setMotor();
     	
     }
 

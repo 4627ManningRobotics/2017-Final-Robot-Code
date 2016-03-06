@@ -22,12 +22,12 @@ public class AutoTargetingX extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     
-   double xDiff = (Robot.centerX - 160);
+   //double xDiff = (Robot.centerX - 160);
    
-   double mappedDiff = xDiff /160;
+   //double mappedDiff = xDiff /160;
     
-   Robot.driveTrain.setLeftMotors(mappedDiff);
-   Robot.driveTrain.setRightMotors(mappedDiff);
+   Robot.driveTrain.setLeftMotors(0.75);
+   Robot.driveTrain.setRightMotors(0.75);
    
     }
 
