@@ -25,10 +25,17 @@ public class AutoTargetingX extends Command {
    //double xDiff = (Robot.centerX - 160);
    
    //double mappedDiff = xDiff /160;
-    
-   Robot.driveTrain.setLeftMotors(0.75);
-   Robot.driveTrain.setRightMotors(0.75);
+   if (Robot.centerX < 150) { 
+   Robot.driveTrain.setLeftMotors(-1);
+   Robot.driveTrain.setRightMotors(-1);
+   }
    
+   if (Robot.centerX > 170) {
+	   
+	Robot.driveTrain.setLeftMotors(1);
+	Robot.driveTrain.setRightMotors(1);
+	   
+   }
     }
 
     // Make this return true when this Command no longer needs to run execute()

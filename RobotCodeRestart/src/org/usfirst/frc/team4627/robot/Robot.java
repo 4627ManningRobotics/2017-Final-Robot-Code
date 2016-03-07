@@ -268,11 +268,11 @@ public class Robot extends IterativeRobot {
     		
     	}
     	//Getting a single double value from the array of centerY
-        if (dataArrayY.length > 0) {	
+        if (dataArrayY.length > widthPos) {	
     		centerY = dataArrayY[widthPos];
         }
     	//Getting a single double value from the array of centerX
-        if (dataArrayX.length > 0){
+        if (dataArrayX.length > widthPos){
     		centerX = dataArrayX[widthPos];
         }
     		

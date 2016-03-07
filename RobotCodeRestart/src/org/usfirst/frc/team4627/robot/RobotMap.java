@@ -91,7 +91,7 @@ public class RobotMap {
 		
 		public static final int EL_CHUPAS_MAX_POSITION = 2436;
 		
-		public static final int DEFENSE_SHOT_ANGLE = 950;
+		public static final int DEFENSE_SHOT_ANGLE = 1000;
 		
 		
 }
