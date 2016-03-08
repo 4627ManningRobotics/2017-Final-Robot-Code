@@ -1,57 +1,23 @@
 package org.usfirst.frc.team4627.robot.commands;
 
-import org.usfirst.frc.team4627.robot.Robot;
-import org.usfirst.frc.team4627.robot.RobotMap;
-
-import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
  *
  */
-public class AutoPlacement3 extends Command {
-
-    public AutoPlacement3() {
-        requires(Robot.driveTrain);
-        requires(Robot.elChupaArms);
-    }
-
-    // Called just before this Command runs the first time
-    protected void initialize() {
-   
-    	System.out.println("Placement 3 is working");
-      
-    	Robot.elChupaArms.motorPosition = RobotMap.DEFENSE_SHOT_ANGLE;
-        Robot.elChupaArms.setMotor();
-        
-        Robot.driveTrain.setLeftMotors(0.5);
-        Robot.driveTrain.setRightMotors(0.5);
-        
-        Timer.delay(0.8);
-        
-    	Robot.driveTrain.setLeftMotors(0);
-    	Robot.driveTrain.setRightMotors(0);
+public class AutoPlacement3 extends CommandGroup {
+    
+    public  AutoPlacement3() {
     	
-        Scheduler.getInstance().add( new TheAligner());
-
-    }
-
-    // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
-    }
-
-    // Make this return true when this Command no longer needs to run execute()
-    protected boolean isFinished() {
-        return true;
-    }
-
-    // Called once after isFinished returns true
-    protected void end() {
-    }
-
-    // Called when another command which requires one or more of the same
-    // subsystems is scheduled to run
-    protected void interrupted() {
+    	addSequential(new Wait(1));
+    	addSequential(new AutoTurn(20));
+    	addSequential(new StopDriveMotors());
+    	addSequential(new Wait(0.42));
+    	addSequential(new DefenseShotAngleSet());
+    	addSequential(new Wait(0.7));
+    	addSequential(new AutoTargetingX());
+    	addSequential(new TheAligner());
+    	
+    	
     }
 }
