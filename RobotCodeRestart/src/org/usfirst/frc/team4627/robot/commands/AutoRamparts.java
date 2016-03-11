@@ -24,7 +24,7 @@ public class AutoRamparts extends Command {
     	
  		Robot.driveTrain.setLeftMotors(0.75);
 		Robot.driveTrain.setRightMotors(-0.75);
-		Timer.delay(3);
+		Timer.delay(2);
 
     	System.out.println("AutoRamparts is executing");
     	

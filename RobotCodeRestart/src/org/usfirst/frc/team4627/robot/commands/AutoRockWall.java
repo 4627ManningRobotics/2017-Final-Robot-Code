@@ -22,9 +22,9 @@ public class AutoRockWall extends Command {
     	Robot.elChupaArms.setMotor();
     	Timer.delay(1);
     	
-    	Robot.driveTrain.setLeftMotors(0.8);	
-    	Robot.driveTrain.setRightMotors(-0.8);
-    	Timer.delay(3);
+    	Robot.driveTrain.setLeftMotors(-0.8);	
+    	Robot.driveTrain.setRightMotors(0.8);
+    	Timer.delay(2);
     	
     	System.out.println("AutoRockWall is executing");
 
