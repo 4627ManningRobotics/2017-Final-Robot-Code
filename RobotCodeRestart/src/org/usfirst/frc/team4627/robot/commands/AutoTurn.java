@@ -66,6 +66,8 @@ public class AutoTurn extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.driveTrain.setLeftMotors(0);
+    	Robot.driveTrain.setRightMotors(0);
     	
     
     	

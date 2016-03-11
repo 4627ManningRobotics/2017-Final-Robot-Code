@@ -1,5 +1,6 @@
 package org.usfirst.frc.team4627.robot.commands;
 import org.usfirst.frc.team4627.robot.Robot;
+import org.usfirst.frc.team4627.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -26,14 +27,14 @@ public class AutoTargetingX extends Command {
    
    //double mappedDiff = xDiff /160;
    if (Robot.centerX < 150) { 
-   Robot.driveTrain.setLeftMotors(-1);
-   Robot.driveTrain.setRightMotors(-1);
+   Robot.driveTrain.setLeftMotors(-RobotMap.AUTO_TARGET_SPIN_SPEED);
+   Robot.driveTrain.setRightMotors(-RobotMap.AUTO_TARGET_SPIN_SPEED);
    }
    
    if (Robot.centerX > 170) {
 	   
-	Robot.driveTrain.setLeftMotors(1);
-	Robot.driveTrain.setRightMotors(1);
+	Robot.driveTrain.setLeftMotors(RobotMap.AUTO_TARGET_SPIN_SPEED);
+	Robot.driveTrain.setRightMotors(RobotMap.AUTO_TARGET_SPIN_SPEED);
 	   
    }
     }
@@ -53,6 +54,10 @@ public class AutoTargetingX extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	
+    	Robot.driveTrain.setLeftMotors(0);
+    	Robot.driveTrain.setRightMotors(0);
+    	
     }
 
     // Called when another command which requires one or more of the same

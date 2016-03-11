@@ -15,7 +15,6 @@ public class AutoPlacement1 extends CommandGroup {
     	addSequential(new Wait(0.42));
     	addSequential(new DefenseShotAngleSet());
     	addSequential(new Wait(0.7));
-    	addSequential(new AutoTargetingX());
     	addSequential(new TheAligner());
     	
     	

@@ -24,6 +24,9 @@ import org.usfirst.frc.team4627.robot.commands.AutoRamparts;
 import org.usfirst.frc.team4627.robot.commands.AutoRockWall;
 import org.usfirst.frc.team4627.robot.commands.AutoRoughTerrain;
 import org.usfirst.frc.team4627.robot.commands.AutoTurn;
+import org.usfirst.frc.team4627.robot.commands.ElChupasControl;
+import org.usfirst.frc.team4627.robot.commands.GTADrive;
+import org.usfirst.frc.team4627.robot.commands.ResetChupasEncoder;
 import org.usfirst.frc.team4627.robot.commands.TheAligner;
 import org.usfirst.frc.team4627.robot.commands.AutoTargetingX;
 import org.usfirst.frc.team4627.robot.commands.AutoTargetingY;
@@ -81,6 +84,8 @@ public class Robot extends IterativeRobot {
 
 	// Autonomous run commands
 	Command autonomousDefenseStart;
+	Command teleopStart;
+	Command teleopChupasStart;
 	public static Command autonomousPlacementStart;
 
 	// Dashboard commands
@@ -89,9 +94,11 @@ public class Robot extends IterativeRobot {
 
 	public void robotInit() {
 		
-		//CameraServer server = CameraServer.getInstance();
-		//server.setQuality(50);
-		//server.startAutomaticCapture("cam0");	
+		/*
+		CameraServer server = CameraServer.getInstance();
+		server.setQuality(50);
+		server.startAutomaticCapture("cam0");	
+		*/
 
 		Robot.elChupaArms.setUpEncoder();
 		
@@ -163,6 +170,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putData("AutoTarget Shoot", new TheAligner());
 		SmartDashboard.putData("Placement One", new AutoPlacement1());
 		SmartDashboard.putData("Test Gyro 45", new AutoTurn(45));
+		SmartDashboard.putData("ZERO CHUPAS", new ResetChupasEncoder());
 	}
 
 	public void disabledPeriodic() {
@@ -201,8 +209,13 @@ public class Robot extends IterativeRobot {
     }
 
     public void teleopInit() {
+    	
+		teleopStart= new GTADrive();
+		teleopStart.start();
 		
-    	// This line makes sure that the autonomous stops running when
+		teleopChupasStart = new ElChupasControl();
+		teleopChupasStart.start();
+		// This line makes sure that the autonomous stops running when
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.

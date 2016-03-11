@@ -14,17 +14,17 @@ public class DriveTrain extends Subsystem {
     
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
- 		/*
+ 		
 		CANTalon topLeftMotor = new CANTalon(RobotMap.TOP_LEFT_MOTOR);
     	CANTalon topRightMotor = new CANTalon(RobotMap.TOP_RIGHT_MOTOR);
     	CANTalon bottomLeftMotor = new CANTalon(RobotMap.BOTTOM_LEFT_MOTOR);
     	CANTalon bottomRightMotor = new CANTalon(RobotMap.BOTTOM_RIGHT_MOTOR);
-    	*/
+    	/*
 		CANJaguar topLeftMotor = new CANJaguar(RobotMap.TOP_LEFT_MOTOR);
 		CANJaguar topRightMotor = new CANJaguar(RobotMap.TOP_RIGHT_MOTOR);
 		CANJaguar bottomLeftMotor = new CANJaguar(RobotMap.BOTTOM_LEFT_MOTOR);
 		CANJaguar bottomRightMotor = new CANJaguar(RobotMap.BOTTOM_RIGHT_MOTOR);
-	
+	*/
     	Solenoid gearShifter = new Solenoid(RobotMap.GEAR_SHIFTER);
 
     	

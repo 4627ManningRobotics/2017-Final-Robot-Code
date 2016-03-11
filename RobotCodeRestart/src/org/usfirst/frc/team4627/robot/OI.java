@@ -5,6 +5,8 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import org.usfirst.frc.team4627.robot.commands.ArmsFullyBack;
 import org.usfirst.frc.team4627.robot.commands.AutoTargeting;
+import org.usfirst.frc.team4627.robot.commands.AutoTargetingX;
+import org.usfirst.frc.team4627.robot.commands.GTADrive;
 import org.usfirst.frc.team4627.robot.commands.TheAligner;
 import org.usfirst.frc.team4627.robot.commands.ChupasAngleCloseShot;
 import org.usfirst.frc.team4627.robot.commands.ChupasGoDown;
@@ -29,6 +31,8 @@ public class OI {
 	//Declaring driver buttons
 	Button driveA = new JoystickButton(driver, RobotMap.BUTTON_A);
 	Button driveB = new JoystickButton(driver, RobotMap.BUTTON_B);
+	Button driveBack = new JoystickButton(driver, RobotMap.BUTTON_BACK);
+	Button driveStart = new JoystickButton(driver, RobotMap.BUTTON_START);
 	
 	//Declaring operator buttons
 	Button opStart = new JoystickButton(operator, RobotMap.BUTTON_START);
@@ -72,6 +76,10 @@ public class OI {
 			
 			driveA.whenPressed(new ShiftHigh());
 			driveB.whenPressed(new ShiftLow());
+			driveBack.whenPressed(new AutoTargetingX());
+			driveStart.whenPressed(new GTADrive());
+			
+			
 			opX.whenPressed(new Shoot());
 			opBack.whenPressed(new ResetChupasEncoder());
 			opY.whenPressed(new ChupasAngleCloseShot());
