@@ -126,14 +126,6 @@ public class Robot extends IterativeRobot {
 		autonomousDefense.addObject("Rough Terrain",new AutoRoughTerrain());
 		autonomousDefense.addObject("Teeter Totters",new AutoTeeterTotters());
 		autonomousDefense.addDefault("Null", new AutoDefenseNull());
-		
-		//Makes all sendable choosers visable on the smart dashboard
-		autonomousDefense.addObject("Moat", new AutoMoat());
-		autonomousDefense.addObject("Portacolis", new AutoPortacolis());
-		autonomousDefense.addObject("Ramparts", new AutoRamparts());
-		autonomousDefense.addObject("Rock Wall", new AutoRockWall());
-		autonomousDefense.addObject("Rough Terrain", new AutoRoughTerrain());
-		autonomousDefense.addObject("Teeter Totters", new AutoTeeterTotters());
 
 		// Makes all sendable choosers visable on the smart dashboard
 		SmartDashboard.putData("Autonomous Defense Selector", autonomousDefense);
