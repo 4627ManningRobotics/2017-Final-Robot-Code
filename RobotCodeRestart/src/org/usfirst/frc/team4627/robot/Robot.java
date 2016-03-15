@@ -143,7 +143,7 @@ public class Robot extends IterativeRobot {
 		autonomousPlacement.addObject("Placement 3", new AutoPlacement3());
 		autonomousPlacement.addObject("Placement 4", new AutoPlacement4());
 		autonomousPlacement.addObject("Placement 5", new AutoPlacement5());
-		autonomousPlacement.addDefault("Null", new AutoPlacementNull());
+		autonomousPlacement.addObject("Null", new AutoPlacementNull());
 
 		// Makes all sendable choosers visable on the smart dashboard
 		SmartDashboard.putData("Autonomous Placement Selector", autonomousPlacement);
