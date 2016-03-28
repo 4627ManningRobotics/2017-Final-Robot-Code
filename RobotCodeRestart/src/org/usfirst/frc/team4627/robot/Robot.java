@@ -14,10 +14,15 @@ import org.usfirst.frc.team4627.robot.commands.AutoDefenseNull;
 import org.usfirst.frc.team4627.robot.commands.AutoLowBar;
 import org.usfirst.frc.team4627.robot.commands.AutoMoat;
 import org.usfirst.frc.team4627.robot.commands.AutoPlacement1;
+import org.usfirst.frc.team4627.robot.commands.AutoPlacement1Reverse;
 import org.usfirst.frc.team4627.robot.commands.AutoPlacement2;
+import org.usfirst.frc.team4627.robot.commands.AutoPlacement2Reverse;
 import org.usfirst.frc.team4627.robot.commands.AutoPlacement3;
+import org.usfirst.frc.team4627.robot.commands.AutoPlacement3Reverse;
 import org.usfirst.frc.team4627.robot.commands.AutoPlacement4;
+import org.usfirst.frc.team4627.robot.commands.AutoPlacement4Reverse;
 import org.usfirst.frc.team4627.robot.commands.AutoPlacement5;
+import org.usfirst.frc.team4627.robot.commands.AutoPlacement5Reverse;
 import org.usfirst.frc.team4627.robot.commands.AutoPlacementNull;
 import org.usfirst.frc.team4627.robot.commands.AutoPortacolis;
 import org.usfirst.frc.team4627.robot.commands.AutoRamparts;
@@ -27,7 +32,8 @@ import org.usfirst.frc.team4627.robot.commands.AutoTurn;
 import org.usfirst.frc.team4627.robot.commands.ElChupasControl;
 import org.usfirst.frc.team4627.robot.commands.GTADrive;
 import org.usfirst.frc.team4627.robot.commands.ResetChupasEncoder;
-import org.usfirst.frc.team4627.robot.commands.TheAligner;
+import org.usfirst.frc.team4627.robot.commands.ReverseAutoPlacement;
+import org.usfirst.frc.team4627.robot.commands.AutoShoot;
 import org.usfirst.frc.team4627.robot.commands.AutoTargetingX;
 import org.usfirst.frc.team4627.robot.commands.AutoTargetingY;
 import org.usfirst.frc.team4627.robot.commands.AutoTeeterTotters;
@@ -59,8 +65,6 @@ import org.usfirst.frc.team4627.robot.subsystems.Sensors;
 
 
 public class Robot extends IterativeRobot {
-	
-	
 	
 	// Declaring variables for retrieving values from GRIP
 	public static double centerY;
@@ -138,12 +142,18 @@ public class Robot extends IterativeRobot {
 
 		// Adding options to the SendableChooser instance variable,
 		// autonoumousDefense
-		autonomousPlacement.addDefault("Placement 1", new AutoPlacement1());
+		autonomousPlacement.addObject("Placement 1", new AutoPlacement1());
 		autonomousPlacement.addObject("Placement 2", new AutoPlacement2());
 		autonomousPlacement.addObject("Placement 3", new AutoPlacement3());
 		autonomousPlacement.addObject("Placement 4", new AutoPlacement4());
 		autonomousPlacement.addObject("Placement 5", new AutoPlacement5());
-		autonomousPlacement.addObject("Null", new AutoPlacementNull());
+		autonomousPlacement.addObject("Placement 1 with Reverse", new AutoPlacement1Reverse());
+		autonomousPlacement.addObject("Placement 2 with Reverse", new AutoPlacement2Reverse());
+		autonomousPlacement.addObject("Placement 3 with Reverse", new AutoPlacement3Reverse());
+		autonomousPlacement.addObject("Placement 4 with Reverse", new AutoPlacement4Reverse());
+		autonomousPlacement.addObject("Placement 5 with Reverse", new AutoPlacement5Reverse());
+		autonomousPlacement.addObject("Any placement without Shooting", new ReverseAutoPlacement());
+		autonomousPlacement.addDefault("Null", new AutoPlacementNull());
 
 		// Makes all sendable choosers visable on the smart dashboard
 		SmartDashboard.putData("Autonomous Placement Selector", autonomousPlacement);
@@ -159,7 +169,7 @@ public class Robot extends IterativeRobot {
 
 		SmartDashboard.putData("AutoTarget X", new AutoTargetingX());
 		SmartDashboard.putData("AutoTarget Y", new AutoTargetingY());
-		SmartDashboard.putData("AutoTarget Shoot", new TheAligner());
+		SmartDashboard.putData("AutoTarget Shoot", new AutoShoot());
 		SmartDashboard.putData("Placement One", new AutoPlacement1());
 		SmartDashboard.putData("Test Gyro 45", new AutoTurn(45));
 		SmartDashboard.putData("ZERO CHUPAS", new ResetChupasEncoder());

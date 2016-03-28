@@ -7,16 +7,16 @@ import org.usfirst.frc.team4627.robot.commands.ArmsFullyBack;
 import org.usfirst.frc.team4627.robot.commands.AutoTargeting;
 import org.usfirst.frc.team4627.robot.commands.AutoTargetingX;
 import org.usfirst.frc.team4627.robot.commands.GTADrive;
-import org.usfirst.frc.team4627.robot.commands.TheAligner;
-import org.usfirst.frc.team4627.robot.commands.ChupasAngleCloseShot;
+import org.usfirst.frc.team4627.robot.commands.AutoShoot;
+import org.usfirst.frc.team4627.robot.commands.SetCloseShotAng;
 import org.usfirst.frc.team4627.robot.commands.ChupasGoDown;
-import org.usfirst.frc.team4627.robot.commands.DefenseShotAngleSet;
+import org.usfirst.frc.team4627.robot.commands.SetDefenseShotAng;
 import org.usfirst.frc.team4627.robot.commands.LowGoalAutomatic;
 import org.usfirst.frc.team4627.robot.commands.ResetChupasEncoder;
 import org.usfirst.frc.team4627.robot.commands.ShiftHigh;
 import org.usfirst.frc.team4627.robot.commands.ShiftLow;
-import org.usfirst.frc.team4627.robot.commands.Shoot;
-import org.usfirst.frc.team4627.robot.commands.TheAligner;
+import org.usfirst.frc.team4627.robot.commands.ElChupaKick;
+import org.usfirst.frc.team4627.robot.commands.AutoShoot;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -80,13 +80,13 @@ public class OI {
 			driveStart.whenPressed(new GTADrive());
 			
 			
-			opX.whenPressed(new Shoot());
+			opX.whenPressed(new ElChupaKick());
 			opBack.whenPressed(new ResetChupasEncoder());
-			opY.whenPressed(new ChupasAngleCloseShot());
+			opY.whenPressed(new SetCloseShotAng());
 			opA.whenPressed(new ChupasGoDown());
 			opB.whenPressed(new LowGoalAutomatic());
-			oprightShoulder.whenPressed(new TheAligner());
-			opleftShoulder.whenPressed(new DefenseShotAngleSet());
+			oprightShoulder.whenPressed(new AutoShoot());
+			opleftShoulder.whenPressed(new SetDefenseShotAng());
 			opStart.whenPressed(new ArmsFullyBack());
 	
 		}

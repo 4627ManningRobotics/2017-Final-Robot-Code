@@ -10,15 +10,13 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 
 public class AutoTurn extends Command {
   
-	double startAng;
-	double desiredAng;
+	double desiredAngle;
 	double relativeAngle;
-	
 	
 	public AutoTurn(double angle) {
         // requires driveTrain
     	requires(Robot.driveTrain);
-    	relativeAngle = angle;
+    	desiredAngle = angle;
     	
     	
     }
@@ -27,20 +25,20 @@ public class AutoTurn extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     
-    startAng = Robot.sensors.getGyroAngle();
-    desiredAng = (relativeAngle + startAng);
+    Robot.sensors.preAngle = Robot.sensors.getGyroAngle();
+    relativeAngle = (desiredAngle + Robot.sensors.preAngle);
         
    	System.out.println("AutoTurn is working");
    		 
     	// Sets the direction of the robot
    		
-   		if(desiredAng > startAng){
+   		if(relativeAngle > Robot.sensors.preAngle){
     	 Robot.driveTrain.setLeftMotors(0.75);
          Robot.driveTrain.setRightMotors(0.75);
          
       
    		}
-   		if(desiredAng < startAng){
+   		if(relativeAngle < Robot.sensors.preAngle){
        	 Robot.driveTrain.setLeftMotors(-0.75);
             Robot.driveTrain.setRightMotors(-0.75);
             
@@ -55,7 +53,7 @@ public class AutoTurn extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	if (desiredAng <= Robot.sensors.getGyroAngle() + 3 && desiredAng >= Robot.sensors.getGyroAngle() - 3) {
+    	if (relativeAngle <= Robot.sensors.getGyroAngle() + 3 && relativeAngle >= Robot.sensors.getGyroAngle() - 3) {
     		return true;
     	} else {
     		

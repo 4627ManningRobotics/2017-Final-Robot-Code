@@ -1,19 +1,16 @@
 package org.usfirst.frc.team4627.robot.commands;
 
+import org.usfirst.frc.team4627.robot.RobotMap;
+
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
  *
  */
-public class AutoTargeting extends CommandGroup {
+public class AutoShoot extends CommandGroup {
     
-    public  AutoTargeting() {
-        
-    	addSequential(new AutoTargetingX());
-    	addSequential(new AutoTargetingY());
-    	addSequential(new AutoShoot());
-    	
-    	// Add Commands here:
+    public  AutoShoot() {
+        // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
         // these will run in order.
@@ -29,5 +26,12 @@ public class AutoTargeting extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
+    	
+    	addSequential(new SetShootSpeed(-RobotMap.EL_CHUPA_FIRING_SPEED));
+    	addSequential(new Wait(1));
+    	addSequential(new ElChupaKick());
+    	addSequential(new SetShootSpeed(0));
+    	
+    	
     }
 }

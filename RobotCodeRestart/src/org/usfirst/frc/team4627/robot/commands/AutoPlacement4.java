@@ -10,10 +10,10 @@ public class AutoPlacement4 extends CommandGroup {
     public  AutoPlacement4() {
     	
     	addSequential(new Wait(1));
-    	addSequential(new DefenseShotAngleSet());
+    	addSequential(new SetDefenseShotAng());
     	addSequential(new Wait(0.7));
     	addSequential(new AutoTurn(-5));
-    	addSequential(new TheAligner());
+    	addSequential(new AutoShoot());
     	
     	
     }

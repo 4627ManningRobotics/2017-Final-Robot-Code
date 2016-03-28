@@ -7,19 +7,18 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class ShootSpeedSetChupas extends Command {
+public class SetPostAngle extends Command {
 
-	double spd;
-	
-    public ShootSpeedSetChupas(double speed) {
-    	requires(Robot.elChupaArms);
-    	spd = speed;
+    public SetPostAngle() {
+        
+    	requires(Robot.sensors);
+    	
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
     	
-    	Robot.elChupaArms.shootBoulder(spd);
+    	Robot.sensors.postAngle = Robot.sensors.getGyroAngle();
     	
     }
 

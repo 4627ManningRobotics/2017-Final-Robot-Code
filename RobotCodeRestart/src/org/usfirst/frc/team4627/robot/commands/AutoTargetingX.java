@@ -57,6 +57,7 @@ public class AutoTargetingX extends Command {
     	
     	Robot.driveTrain.setLeftMotors(0);
     	Robot.driveTrain.setRightMotors(0);
+
     	
     }
 

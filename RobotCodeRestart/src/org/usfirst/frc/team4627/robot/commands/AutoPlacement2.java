@@ -11,11 +11,11 @@ public class AutoPlacement2 extends CommandGroup {
     	
     	addSequential(new Wait(1));
     	addSequential(new AutoTurn(30));
-    	addSequential(new StopDriveMotors());
+    	addSequential(new SetDriveMotors(0));
     	addSequential(new Wait(0.42));
-    	addSequential(new DefenseShotAngleSet());
+    	addSequential(new SetDefenseShotAng());
     	addSequential(new Wait(0.7));
-    	addSequential(new TheAligner());
+    	addSequential(new AutoShoot());
     	
     	
     }

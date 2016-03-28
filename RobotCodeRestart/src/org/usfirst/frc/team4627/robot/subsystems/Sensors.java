@@ -11,6 +11,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Sensors extends Subsystem {
 	
 	ADXRS450_Gyro gyroSPI = new ADXRS450_Gyro();
+	public double preAngle;
+	public double postAngle;
 	
 	
 	public double getGyroAngle() {
@@ -20,7 +22,7 @@ public class Sensors extends Subsystem {
 	}
 	
     public void initDefaultCommand() {
-        //setDefaultCommand(new ElChupasControl());
+        //(new ElChupasControl());
     }
     
     
