@@ -2,9 +2,7 @@ package org.usfirst.frc.team4627.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-
 import org.usfirst.frc.team4627.robot.commands.ArmsFullyBack;
-import org.usfirst.frc.team4627.robot.commands.AutoTargeting;
 import org.usfirst.frc.team4627.robot.commands.AutoTargetingX;
 import org.usfirst.frc.team4627.robot.commands.GTADrive;
 import org.usfirst.frc.team4627.robot.commands.AutoShoot;
@@ -16,7 +14,7 @@ import org.usfirst.frc.team4627.robot.commands.ResetChupasEncoder;
 import org.usfirst.frc.team4627.robot.commands.ShiftHigh;
 import org.usfirst.frc.team4627.robot.commands.ShiftLow;
 import org.usfirst.frc.team4627.robot.commands.ElChupaKick;
-import org.usfirst.frc.team4627.robot.commands.AutoShoot;
+
 
 /**
  * This class is the glue that binds the controls on the physical operator
