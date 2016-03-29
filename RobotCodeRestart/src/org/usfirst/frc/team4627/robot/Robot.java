@@ -24,7 +24,7 @@ import org.usfirst.frc.team4627.robot.commands.AutoPlacement4Reverse;
 import org.usfirst.frc.team4627.robot.commands.AutoPlacement5;
 import org.usfirst.frc.team4627.robot.commands.AutoPlacement5Reverse;
 import org.usfirst.frc.team4627.robot.commands.AutoPlacementNull;
-import org.usfirst.frc.team4627.robot.commands.AutoPortacolis;
+import org.usfirst.frc.team4627.robot.commands.AutoPortcullis;
 import org.usfirst.frc.team4627.robot.commands.AutoRamparts;
 import org.usfirst.frc.team4627.robot.commands.AutoRockWall;
 import org.usfirst.frc.team4627.robot.commands.AutoRoughTerrain;
@@ -36,7 +36,7 @@ import org.usfirst.frc.team4627.robot.commands.ReverseAutoPlacement;
 import org.usfirst.frc.team4627.robot.commands.AutoShoot;
 import org.usfirst.frc.team4627.robot.commands.AutoTargetingX;
 import org.usfirst.frc.team4627.robot.commands.AutoTargetingY;
-import org.usfirst.frc.team4627.robot.commands.AutoTeeterTotters;
+import org.usfirst.frc.team4627.robot.commands.AutoShovelTheFries;
 import org.usfirst.frc.team4627.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team4627.robot.subsystems.ElChupaArms;
 import org.usfirst.frc.team4627.robot.subsystems.Sensors;
@@ -65,6 +65,8 @@ import org.usfirst.frc.team4627.robot.subsystems.Sensors;
 
 
 public class Robot extends IterativeRobot {
+	
+	public static int armPositionAuto = RobotMap.EL_CHUPAS_MAX_POSITION;
 	
 	// Declaring variables for retrieving values from GRIP
 	public static double centerY;
@@ -98,6 +100,8 @@ public class Robot extends IterativeRobot {
 
 	public void robotInit() {
 		
+
+		
 		/*
 		CameraServer server = CameraServer.getInstance();
 		server.setQuality(50);
@@ -124,11 +128,11 @@ public class Robot extends IterativeRobot {
 		//Adding options to the SenableChooser instance variable, autonoumousDefense
 		autonomousDefense.addObject("Low Bar",new AutoLowBar());
 		autonomousDefense.addObject("Moat",new AutoMoat());
-		autonomousDefense.addObject("Portacolis",new AutoPortacolis());
+		autonomousDefense.addObject("Portacolis",new AutoPortcullis());
 		autonomousDefense.addObject("Ramparts",new AutoRamparts());
 		autonomousDefense.addObject("Rock Wall",new AutoRockWall());
 		autonomousDefense.addObject("Rough Terrain",new AutoRoughTerrain());
-		autonomousDefense.addObject("Teeter Totters",new AutoTeeterTotters());
+		autonomousDefense.addObject("Teeter Totters",new AutoShovelTheFries());
 		autonomousDefense.addDefault("Null", new AutoDefenseNull());
 
 		// Makes all sendable choosers visable on the smart dashboard
@@ -152,7 +156,7 @@ public class Robot extends IterativeRobot {
 		autonomousPlacement.addObject("Placement 3 with Reverse", new AutoPlacement3Reverse());
 		autonomousPlacement.addObject("Placement 4 with Reverse", new AutoPlacement4Reverse());
 		autonomousPlacement.addObject("Placement 5 with Reverse", new AutoPlacement5Reverse());
-		autonomousPlacement.addObject("Any placement without Shooting", new ReverseAutoPlacement());
+		autonomousPlacement.addObject("Any placement reverse without Shooting", new ReverseAutoPlacement());
 		autonomousPlacement.addDefault("Null", new AutoPlacementNull());
 
 		// Makes all sendable choosers visable on the smart dashboard

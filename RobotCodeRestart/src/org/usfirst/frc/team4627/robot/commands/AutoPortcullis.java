@@ -1,7 +1,6 @@
 package org.usfirst.frc.team4627.robot.commands;
 
 import org.usfirst.frc.team4627.robot.Robot;
-import org.usfirst.frc.team4627.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
@@ -9,32 +8,33 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class AutoRoughTerrain extends Command {
+public class AutoPortcullis extends Command {
 
-    public AutoRoughTerrain() {
+    public AutoPortcullis() {
     	requires(Robot.driveTrain);
     	requires(Robot.elChupaArms);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    
-    
-    	Robot.elChupaArms.motorPosition = RobotMap.EL_CHUPAS_MAX_POSITION;
-    	Robot.elChupaArms.setMotor();
+   
+    /*	
+    	
+    	Robot.driveTrain.setLeftMotors(0.5);
+    	Robot.driveTrain.setRightMotors(-0.5);
     	Timer.delay(1);
     	
-    	Robot.driveTrain.setLeftMotors(0.6);
-    	Robot.driveTrain.setRightMotors(-0.6);
-    	Timer.delay(1.5);
+    	Robot.elChupaArms.motorPosition = 
+    	
+    */
     
-    	System.out.println("AutoRoughTerrain is executing");
-
+    	System.out.println("AutoPortacolis is executing");
+    
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-   
+ 
     }
 
     // Make this return true when this Command no longer needs to run execute()

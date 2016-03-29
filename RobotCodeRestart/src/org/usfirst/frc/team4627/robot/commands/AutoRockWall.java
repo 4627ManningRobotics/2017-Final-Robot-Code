@@ -26,6 +26,10 @@ public class AutoRockWall extends Command {
     	Robot.driveTrain.setRightMotors(0.8);
     	Timer.delay(2);
     	
+    	Robot.driveTrain.setLeftMotors(-0.75);
+    	Robot.driveTrain.setRightMotors(-0.75);
+    	Timer.delay(1.5);
+    	
     	System.out.println("AutoRockWall is executing");
 
     
