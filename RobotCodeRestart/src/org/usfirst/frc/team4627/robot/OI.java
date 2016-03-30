@@ -2,7 +2,9 @@ package org.usfirst.frc.team4627.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
 import org.usfirst.frc.team4627.robot.commands.ArmsFullyBack;
+import org.usfirst.frc.team4627.robot.commands.AutoTarget;
 import org.usfirst.frc.team4627.robot.commands.AutoTargetingX;
 import org.usfirst.frc.team4627.robot.commands.GTADrive;
 import org.usfirst.frc.team4627.robot.commands.AutoShoot;
@@ -83,7 +85,7 @@ public class OI {
 			opY.whenPressed(new SetCloseShotAng());
 			opA.whenPressed(new ChupasGoDown());
 			opB.whenPressed(new LowGoalAutomatic());
-			oprightShoulder.whenPressed(new AutoShoot());
+			oprightShoulder.whenPressed(new AutoTarget());
 			opleftShoulder.whenPressed(new SetDefenseShotAng());
 			opStart.whenPressed(new ArmsFullyBack());
 	

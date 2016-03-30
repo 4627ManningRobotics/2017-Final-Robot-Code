@@ -1,15 +1,19 @@
 package org.usfirst.frc.team4627.robot.commands;
 import org.usfirst.frc.team4627.robot.Robot;
+import org.usfirst.frc.team4627.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+/**
+ *
+ */
+public class AutoTargetingXCoarse extends Command {
 
-public class AutoTargetingY extends Command {
-
-    public AutoTargetingY() {
+    public AutoTargetingXCoarse() {
     	
-       requires(Robot.elChupaArms);
-    
+       requires(Robot.driveTrain);
+       requires(Robot.sensors);
+  
     }
 
     // Called just before this Command runs the first time
@@ -18,25 +22,26 @@ public class AutoTargetingY extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if (Robot.centerY > 225) {
-    		
-    		Robot.elChupaArms.motorPosition-= 1;
-    		Robot.elChupaArms.setMotor();
-    		
-    	}
-    	
-    	if (Robot.centerY < 215) {
-    		
-    		Robot.elChupaArms.motorPosition+= 1;
-    		Robot.elChupaArms.setMotor();
-    		
-    	}
-    	
-  }
+    
+   //double xDiff = (Robot.centerX - 160);
+   
+   //double mappedDiff = xDiff /160;
+   if (Robot.centerX < 152) { 
+   Robot.driveTrain.setLeftMotors(-RobotMap.AUTO_TARGET_SPIN_SPEED);
+   Robot.driveTrain.setRightMotors(-RobotMap.AUTO_TARGET_SPIN_SPEED);
+   }
+   
+   if (Robot.centerX > 162) {
+	   
+	Robot.driveTrain.setLeftMotors(RobotMap.AUTO_TARGET_SPIN_SPEED);
+	Robot.driveTrain.setRightMotors(RobotMap.AUTO_TARGET_SPIN_SPEED);
+	   
+   }
+    }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(Robot.centerY < 225 && Robot.centerY > 215) {
+        if(Robot.centerX > 152 && Robot.centerX < 162) {
         	
         return true;
         	
@@ -49,6 +54,11 @@ public class AutoTargetingY extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	
+    	Robot.driveTrain.setLeftMotors(0);
+    	Robot.driveTrain.setRightMotors(0);
+
+    	
     }
 
     // Called when another command which requires one or more of the same
