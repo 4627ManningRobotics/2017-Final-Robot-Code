@@ -18,7 +18,7 @@ public class AutoLowBar extends Command {
     
     	Robot.elChupaArms.motorPosition = 250;
     	Robot.elChupaArms.setMotor();
-    	Timer.delay(2);
+    	Timer.delay(0.75);
     	
         // setsMotorspeed
         Robot.driveTrain.setLeftMotors(0.4);

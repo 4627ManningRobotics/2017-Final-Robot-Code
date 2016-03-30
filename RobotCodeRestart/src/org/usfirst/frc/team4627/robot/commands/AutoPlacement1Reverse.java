@@ -10,12 +10,12 @@ public class AutoPlacement1Reverse extends CommandGroup {
    
     public  AutoPlacement1Reverse() {
     
-    	addSequential(new Wait(1));
+    	addSequential(new Wait(0.5));
     	addSequential(new AutoTurn(36));
     	addSequential(new SetDriveMotors(0));
-    	addSequential(new Wait(0.42));
+    	addSequential(new Wait(0.2));
     	addSequential(new SetDefenseShotAng());
-    	addSequential(new Wait(0.7));
+    	addSequential(new Wait(0.2));
     	addSequential(new AutoTargetingX());
     	addSequential(new SetPostAngle());
     	addSequential(new AutoTargetingY());
@@ -25,6 +25,8 @@ public class AutoPlacement1Reverse extends CommandGroup {
 	    addSequential(new Wait(1));
 	    addSequential(new SetDriveMotors(-0.4));
 	    addSequential(new Wait(3));
+	    addSequential(new SetDriveMotors(0));
+	    addSequential(new AutoTurn(100));
 	    addSequential(new SetDriveMotors(0));
     
     }

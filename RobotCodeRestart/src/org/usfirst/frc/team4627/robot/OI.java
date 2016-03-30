@@ -2,12 +2,10 @@ package org.usfirst.frc.team4627.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-
 import org.usfirst.frc.team4627.robot.commands.ArmsFullyBack;
 import org.usfirst.frc.team4627.robot.commands.AutoTarget;
 import org.usfirst.frc.team4627.robot.commands.AutoTargetingX;
 import org.usfirst.frc.team4627.robot.commands.GTADrive;
-import org.usfirst.frc.team4627.robot.commands.AutoShoot;
 import org.usfirst.frc.team4627.robot.commands.SetCloseShotAng;
 import org.usfirst.frc.team4627.robot.commands.ChupasGoDown;
 import org.usfirst.frc.team4627.robot.commands.SetDefenseShotAng;

@@ -13,7 +13,7 @@ public class AutoPlacement4 extends CommandGroup {
     	addSequential(new SetDefenseShotAng());
     	addSequential(new Wait(0.7));
     	addSequential(new AutoTurn(-5));
-    	addSequential(new AutoShoot());
+    	addSequential(new AutoTarget());
     	
     	
     }

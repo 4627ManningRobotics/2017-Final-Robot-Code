@@ -20,14 +20,14 @@ public class AutoTargetingY extends Command {
     protected void execute() {
     	if (Robot.centerY > 225) {
     		
-    		Robot.elChupaArms.motorPosition-= 1;
+    		Robot.elChupaArms.motorPosition-= 2;
     		Robot.elChupaArms.setMotor();
     		
     	}
     	
     	if (Robot.centerY < 215) {
     		
-    		Robot.elChupaArms.motorPosition+= 1;
+    		Robot.elChupaArms.motorPosition+= 2;
     		Robot.elChupaArms.setMotor();
     		
     	}
