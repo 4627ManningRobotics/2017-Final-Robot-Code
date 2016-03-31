@@ -22,7 +22,7 @@ public class AutoTurn extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     
-    Robot.sensors.preAngle = Robot.sensors.getGyroAngle();
+    Robot.sensors.preAngle = (int)Robot.sensors.getGyroAngle();
     relativeAngle = (desiredAngle + Robot.sensors.preAngle);
         
    	System.out.println("AutoTurn is working");
