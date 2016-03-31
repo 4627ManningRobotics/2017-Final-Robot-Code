@@ -10,7 +10,7 @@ public class AutoTargetingX extends CommandGroup {
     public  AutoTargetingX() {
     	addSequential(new AutoTargetingXCoarse());
     	addSequential(new Wait(0.5));
-    	addSequential(new AutoTargetingXFine());
-    	addSequential(new Wait(0.5));
+    //	addSequential(new AutoTargetingXFine());
+    //	addSequential(new Wait(0.5));
     }
 }

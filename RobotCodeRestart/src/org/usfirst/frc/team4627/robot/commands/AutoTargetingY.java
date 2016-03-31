@@ -18,16 +18,17 @@ public class AutoTargetingY extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if (Robot.centerY > 225) {
+    	
+    	if (Robot.centerY > 185) {
     		
-    		Robot.elChupaArms.motorPosition-= 2;
+    		Robot.elChupaArms.motorPosition-= 3;
     		Robot.elChupaArms.setMotor();
     		
     	}
     	
-    	if (Robot.centerY < 215) {
+    	if (Robot.centerY < 175) {
     		
-    		Robot.elChupaArms.motorPosition+= 2;
+    		Robot.elChupaArms.motorPosition+= 3;
     		Robot.elChupaArms.setMotor();
     		
     	}
@@ -36,7 +37,7 @@ public class AutoTargetingY extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(Robot.centerY < 225 && Robot.centerY > 215) {
+        if(Robot.centerY < 185 && Robot.centerY > 175) {
         	
         return true;
         	
