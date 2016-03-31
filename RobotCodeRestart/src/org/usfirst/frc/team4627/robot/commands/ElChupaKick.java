@@ -19,7 +19,7 @@ public class ElChupaKick extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
    Robot.elChupaArms.shootKicker(true);
-   setTimeout(1);
+   setTimeout(0.5);
   
     
     }

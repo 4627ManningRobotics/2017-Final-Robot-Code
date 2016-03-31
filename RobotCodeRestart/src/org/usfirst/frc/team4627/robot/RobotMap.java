@@ -94,6 +94,7 @@ public class RobotMap {
 		
 		public static final double AUTO_TARGET_SPIN_SPEED = 0.45;
 		public static final double AUTO_TARGET_SPIN_SPEED_FINE = 0.3;
+	
 		
 		
 }

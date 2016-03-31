@@ -8,9 +8,12 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class SpinElChupas extends Command {
-
-    public SpinElChupas() {
+	double lSpeed; 
+	double lTime;
+    public SpinElChupas(double speed, double time) {
         requires(Robot.elChupaArms);
+        lSpeed = speed;
+        lTime = time;
     }
 
     // Called just before this Command runs the first time
@@ -19,11 +22,15 @@ public class SpinElChupas extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	
+    	Robot.elChupaArms.shootBoulder(lSpeed);
+    	setTimeout(lTime);
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true

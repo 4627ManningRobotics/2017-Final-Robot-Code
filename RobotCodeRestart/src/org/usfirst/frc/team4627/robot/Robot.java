@@ -31,6 +31,7 @@ import org.usfirst.frc.team4627.robot.commands.ElChupasControl;
 import org.usfirst.frc.team4627.robot.commands.GTADrive;
 import org.usfirst.frc.team4627.robot.commands.ResetChupasEncoder;
 import org.usfirst.frc.team4627.robot.commands.ReverseAutoPlacement;
+import org.usfirst.frc.team4627.robot.commands.TestingSystemsCommandGroup;
 import org.usfirst.frc.team4627.robot.commands.AutoShoot;
 import org.usfirst.frc.team4627.robot.commands.AutoTargetingX;
 import org.usfirst.frc.team4627.robot.commands.AutoTargetingY;
@@ -63,6 +64,8 @@ import org.usfirst.frc.team4627.robot.subsystems.Sensors;
 
 
 public class Robot extends IterativeRobot {
+	
+	public static String smartDashboardSystemWarning = "Begin system test with arms COMPLETELY DOWN";
 	
 	public static int armPositionAuto = RobotMap.EL_CHUPAS_MAX_POSITION;
 	
@@ -175,6 +178,9 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putData("Placement One", new AutoPlacement1());
 		SmartDashboard.putData("Test Gyro 45", new AutoTurn(45));
 		SmartDashboard.putData("ZERO CHUPAS", new ResetChupasEncoder());
+		SmartDashboard.putData("Test All Systems", new TestingSystemsCommandGroup());
+		
+		SmartDashboard.putString("WARNING", smartDashboardSystemWarning);
 	}
 
 	public void disabledPeriodic() {
