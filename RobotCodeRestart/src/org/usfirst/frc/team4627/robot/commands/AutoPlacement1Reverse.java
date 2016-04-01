@@ -13,15 +13,17 @@ public class AutoPlacement1Reverse extends CommandGroup {
     	addSequential(new Wait(0.5));
     	addSequential(new AutoTurn(50));
     	addSequential(new Wait(0.2));
-    	addSequential(new SetCloseShotAng());
+    	addSequential(new SetArmPosition(900));
     	addSequential(new Wait(0.2));
-    	addSequential(new SetDriveMotors(0.9, 1));
+    	addSequential(new SetDriveMotors(0.5, 0.7));
     	addSequential(new AutoTargetingX());
     	addSequential(new SetPostAngle());
     	addSequential(new AutoTargetingY());
-    	addSequential(new SetArmPosition(Robot.elChupaArms.motorPosition /*+ 100*/));
+    	addSequential(new SetArmPosition(Robot.elChupaArms.motorPosition + 20));
     	addSequential(new Wait(2));
     	addSequential(new AutoShoot());
+    	addSequential(new SetDriveMotors(-0.5, 0.7));
+    	addSequential(new AutoTurn(-50));
 
     	/*addSequential(new AutoTurn(Robot.sensors.preAngle - Robot.sensors.postAngle));
     	addSequential(new SetArmPosition(Robot.armPositionAuto));
