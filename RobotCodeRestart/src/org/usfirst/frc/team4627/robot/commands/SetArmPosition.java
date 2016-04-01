@@ -9,14 +9,17 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class SetArmPosition extends Command {
 
+	
+	int pos;
+	
     public SetArmPosition(int armPosition) {
       requires (Robot.elChupaArms);
-      Robot.elChupaArms.motorPosition = armPosition;
+      pos = armPosition;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	
+    	Robot.elChupaArms.motorPosition=pos;
     	Robot.elChupaArms.setMotor();
 
     }

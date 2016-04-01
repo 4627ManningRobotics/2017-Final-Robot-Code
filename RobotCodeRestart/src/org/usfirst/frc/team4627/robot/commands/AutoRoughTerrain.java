@@ -18,15 +18,10 @@ public class AutoRoughTerrain extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    
-    
-    	Robot.elChupaArms.motorPosition = RobotMap.EL_CHUPAS_MAX_POSITION;
-    	Robot.elChupaArms.setMotor();
-    	Timer.delay(1);
     	
     	Robot.driveTrain.setLeftMotors(0.6);
     	Robot.driveTrain.setRightMotors(-0.6);
-    	Timer.delay(1.5);
+    	Timer.delay(1.7);
     
     	System.out.println("AutoRoughTerrain is executing");
 
@@ -44,6 +39,9 @@ public class AutoRoughTerrain extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	
+    	Robot.driveTrain.setLeftMotors(0);
+    	Robot.driveTrain.setRightMotors(0);
     	
     	if(Robot.autonomousPlacementStart != null) {
     		Robot.autonomousPlacementStart.start();

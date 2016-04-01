@@ -16,7 +16,7 @@ public class AutoLowBar extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     
-    	Robot.elChupaArms.motorPosition = 250;
+    	Robot.elChupaArms.motorPosition = 200;
     	Robot.elChupaArms.setMotor();
     	Timer.delay(0.75);
     	

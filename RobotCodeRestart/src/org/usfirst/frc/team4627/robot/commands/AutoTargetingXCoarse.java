@@ -26,12 +26,12 @@ public class AutoTargetingXCoarse extends Command {
    //double xDiff = (Robot.centerX - 160);
    
    //double mappedDiff = xDiff /160;
-   if (Robot.centerX < 152) { 
+   if (Robot.centerX < 155) { 
    Robot.driveTrain.setLeftMotors(-RobotMap.AUTO_TARGET_SPIN_SPEED);
    Robot.driveTrain.setRightMotors(-RobotMap.AUTO_TARGET_SPIN_SPEED);
    }
    
-   if (Robot.centerX > 162) {
+   if (Robot.centerX > 165) {
 	   
 	Robot.driveTrain.setLeftMotors(RobotMap.AUTO_TARGET_SPIN_SPEED);
 	Robot.driveTrain.setRightMotors(RobotMap.AUTO_TARGET_SPIN_SPEED);
@@ -41,7 +41,7 @@ public class AutoTargetingXCoarse extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(Robot.centerX > 152 && Robot.centerX < 162) {
+        if(Robot.centerX > 155 && Robot.centerX < 165) {
         	
         return true;
         	
