@@ -19,6 +19,7 @@ public class AutoPlacement1Reverse extends CommandGroup {
     	addSequential(new SetPostAngle());
     	addSequential(new AutoTargetingY());
     	addSequential(new SetArmPosition(Robot.elChupaArms.motorPosition + 100));
+    	addSequential(new Wait(2));
     	addSequential(new AutoShoot());
 
     	/*addSequential(new AutoTurn(Robot.sensors.preAngle - Robot.sensors.postAngle));
