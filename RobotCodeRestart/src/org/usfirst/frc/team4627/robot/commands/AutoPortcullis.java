@@ -1,11 +1,15 @@
 package org.usfirst.frc.team4627.robot.commands;
 
 import org.usfirst.frc.team4627.robot.Robot;
+import org.usfirst.frc.team4627.robot.RobotMap;
+
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
+
 public class AutoPortcullis extends Command {
 
     public AutoPortcullis() {
@@ -16,17 +20,27 @@ public class AutoPortcullis extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
    
-    /*	
+    	System.out.println("AutoPortacolis is executing");
+    	
+    	Robot.elChupaArms.motorPosition = 100;
+    	Robot.elChupaArms.setMotor();
     	
     	Robot.driveTrain.setLeftMotors(0.5);
     	Robot.driveTrain.setRightMotors(-0.5);
     	Timer.delay(1);
     	
-    	Robot.elChupaArms.motorPosition = 
+    	Robot.driveTrain.setLeftMotors(0);
+    	Robot.driveTrain.setRightMotors(0);
     	
-    */
-    
-    	System.out.println("AutoPortacolis is executing");
+    	Robot.elChupaArms.motorPosition = RobotMap.EL_CHUPAS_MAX_POSITION;
+    	Robot.elChupaArms.setMotor();
+    	
+    	Robot.driveTrain.setLeftMotors(0.9);
+    	Robot.driveTrain.setRightMotors(-0.9);
+    	Timer.delay(0.5);
+    	
+    	Robot.driveTrain.setLeftMotors(0);
+    	Robot.driveTrain.setRightMotors(0);
     
     }
 
