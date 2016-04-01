@@ -1,6 +1,5 @@
 package org.usfirst.frc.team4627.robot.commands;
 
-import org.usfirst.frc.team4627.robot.Robot;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
@@ -12,7 +11,7 @@ public class AutoPlacement5Reverse extends CommandGroup {
     
     	addSequential(new Wait(1));
     	addSequential(new AutoTurn(-15));
-    	addSequential(new SetDriveMotors(0));
+    	addSequential(new SetDriveMotors(0, 0));
     	addSequential(new Wait(0.42));
     	addSequential(new SetDefenseShotAng());
     	addSequential(new Wait(0.7));

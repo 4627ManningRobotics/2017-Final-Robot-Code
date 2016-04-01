@@ -2,6 +2,7 @@ package org.usfirst.frc.team4627.robot.commands;
 
 import org.usfirst.frc.team4627.robot.Robot;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -9,12 +10,12 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class SetDriveMotors extends Command {
 
-	
+	double tme;
 	double spd;
 	
-    public SetDriveMotors(double speed) {
+    public SetDriveMotors(double speed, double time) {
         requires(Robot.driveTrain);
-        
+        tme = time;
         spd = speed;
     }
 
@@ -27,6 +28,7 @@ public class SetDriveMotors extends Command {
     	
     	Robot.driveTrain.setLeftMotors(spd);
     	Robot.driveTrain.setRightMotors(-spd);
+    	Timer.delay(tme);
     	
     }
 
@@ -37,6 +39,8 @@ public class SetDriveMotors extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.driveTrain.setLeftMotors(0);
+    	Robot.driveTrain.setRightMotors(0);
     }
 
     // Called when another command which requires one or more of the same
