@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team4627.robot;
 
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -39,6 +40,7 @@ import org.usfirst.frc.team4627.robot.commands.AutoShovelTheFries;
 import org.usfirst.frc.team4627.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team4627.robot.subsystems.ElChupaArms;
 import org.usfirst.frc.team4627.robot.subsystems.Sensors;
+import org.usfirst.frc.team4627.robot.subsystems.Winch;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -73,6 +75,7 @@ public class Robot extends IterativeRobot {
 	public static double centerY;
 	public static double centerX;
 
+	
 	// GRIP table declared
 	NetworkTable GRIPDataTable = NetworkTable.getTable("GRIP/gripFilePublish");
 
@@ -85,7 +88,9 @@ public class Robot extends IterativeRobot {
 	// Enables the Sensors subsystem to be used in commands
 	public static final Sensors sensors = new Sensors();
 	
-
+	public static final Winch winch = new Winch();
+	
+	
 	// Enables OI
 	public static OI oi;
 
@@ -101,7 +106,7 @@ public class Robot extends IterativeRobot {
 
 	public void robotInit() {
 		
-
+		
 		
 		/*
 		CameraServer server = CameraServer.getInstance();

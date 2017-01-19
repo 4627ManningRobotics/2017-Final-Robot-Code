@@ -21,6 +21,7 @@ public class RobotMap {
 		public static final int BOTTOM_LEFT_MOTOR = 6;
 		public static final int TOP_LEFT_MOTOR = 7;
 		public static final int TOP_RIGHT_MOTOR = 8;
+		public static final int WINCH_CAN_ID = 9;
 		
 		
 		
@@ -94,6 +95,7 @@ public class RobotMap {
 		
 		public static final double AUTO_TARGET_SPIN_SPEED = 0.3;
 		public static final double AUTO_TARGET_SPIN_SPEED_FINE = 0.3;
+
 	
 		
 		

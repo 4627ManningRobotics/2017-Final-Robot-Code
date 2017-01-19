@@ -2,8 +2,9 @@ package org.usfirst.frc.team4627.robot.subsystems;
 import org.usfirst.frc.team4627.robot.RobotMap;
 import org.usfirst.frc.team4627.robot.commands.ElChupasControl;
 
-import edu.wpi.first.wpilibj.CANTalon;
-import edu.wpi.first.wpilibj.CANTalon.FeedbackDevice;
+import com.ctre.CANTalon;
+import com.ctre.CANTalon.FeedbackDevice;
+
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
